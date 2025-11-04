@@ -26,8 +26,9 @@
             padding: 1.5rem 5%;
             z-index: 1000;
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
             align-items: center;
+            text-align: center;
         }
 
         .logo {
@@ -35,12 +36,15 @@
             color: #d4af37;
             font-weight: bold;
             letter-spacing: 2px;
+            margin-bottom: 1rem;
         }
 
         .nav-links {
             display: flex;
             gap: 2rem;
             list-style: none;
+            flex-wrap: wrap;
+            justify-content: center;
         }
 
         .nav-links a {
@@ -395,12 +399,26 @@
             }
             to {
                 opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
         /* Mobile Responsive */
         @media (max-width: 768px) {
+            nav {
+                padding: 1rem 5%;
+            }
+
+            .logo {
+                font-size: 1.5rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+                flex-wrap: wrap;
+            }
+
+            .nav-links a {
+                font-size: 0.85rem;
+            }
+
             .hero-content h1 {
                 font-size: 2.5rem;
             }
@@ -409,16 +427,36 @@
                 font-size: 1rem;
             }
 
-            .nav-links {
-                flex-direction: column;
-                gap: 1rem;
+            .menu-grid {
+                grid-template-columns: 1fr;
             }
+        }
 
+        @media (max-width: 480px) {
             nav {
-                flex-direction: column;
-                gap: 1rem;
+                padding: 0.8rem 3%;
             }
 
+            .logo {
+                font-size: 1.3rem;
+            }
+
+            .nav-links {
+                gap: 0.8rem;
+            }
+
+            .nav-links a {
+                font-size: 0.8rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .about, .menu, .events, .gallery, .contact {
+                padding: 4rem 3%;
+            }
+        }
             .menu-grid {
                 grid-template-columns: 1fr;
             }
