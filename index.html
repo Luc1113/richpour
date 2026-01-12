@@ -12,9 +12,9 @@
         }
 
         body {
-            font-family: 'Georgia', serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             line-height: 1.6;
-            color: #333;
+            color: #1a1a1a;
             overflow-x: hidden;
         }
 
@@ -22,37 +22,47 @@
         nav {
             position: fixed;
             width: 100%;
-            background: rgba(20, 60, 80, 0.95);
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
             padding: 1.5rem 5%;
             z-index: 1000;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            padding: 1rem 5%;
+            box-shadow: 0 2px 30px rgba(0, 0, 0, 0.1);
         }
 
         .logo {
-            font-size: 1.8rem;
-            color: #d4af37;
-            font-weight: bold;
-            letter-spacing: 2px;
+            font-size: 1.6rem;
+            color: #c9a961;
+            font-weight: 700;
+            letter-spacing: 3px;
         }
 
         .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: 2.5rem;
             list-style: none;
         }
 
         .nav-links a {
-            color: #fff;
+            color: #333;
             text-decoration: none;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
+            font-weight: 500;
             letter-spacing: 1px;
             transition: color 0.3s;
+            text-transform: uppercase;
         }
 
         .nav-links a:hover {
-            color: #d4af37;
+            color: #c9a961;
         }
 
         /* Hamburger Menu */
@@ -60,19 +70,19 @@
             display: none;
             flex-direction: column;
             cursor: pointer;
-            gap: 4px;
+            gap: 5px;
         }
 
         .hamburger span {
-            width: 25px;
-            height: 3px;
-            background: #d4af37;
+            width: 28px;
+            height: 2.5px;
+            background: #c9a961;
             transition: all 0.3s;
             border-radius: 2px;
         }
 
         .hamburger.active span:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
+            transform: rotate(45deg) translate(6px, 6px);
         }
 
         .hamburger.active span:nth-child(2) {
@@ -80,13 +90,13 @@
         }
 
         .hamburger.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(7px, -6px);
+            transform: rotate(-45deg) translate(6px, -6px);
         }
 
         /* Hero Section */
         .hero {
-            height: 100vh;
-            background: linear-gradient(135deg, #143C50 0%, #0a2533 100%);
+            min-height: 100vh;
+            background: linear-gradient(135deg, #1a2f3a 0%, #0d1d26 100%);
             background-size: cover;
             background-position: center;
             display: flex;
@@ -94,145 +104,194 @@
             justify-content: center;
             text-align: center;
             color: #fff;
+            padding: 8rem 5% 4rem;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(201, 169, 97, 0.1) 0%, transparent 70%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
         }
 
         .hero-content h1 {
             font-size: 4rem;
-            color: #d4af37;
+            color: #c9a961;
             margin-bottom: 1rem;
-            letter-spacing: 3px;
+            letter-spacing: 4px;
+            font-weight: 300;
             animation: fadeInUp 1s ease;
         }
 
         .hero-content img {
-            max-width: 600px;
+            max-width: 550px;
             width: 90%;
             height: auto;
-            margin: 0 auto 2rem;
+            margin: 0 auto 2.5rem;
             display: block;
+            filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3));
         }
 
         .hero-content p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
             letter-spacing: 2px;
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.9);
             animation: fadeInUp 1s ease 0.3s backwards;
         }
 
         .cta-button {
             display: inline-block;
-            padding: 1rem 2.5rem;
-            background: #d4af37;
-            color: #000;
+            padding: 1.1rem 3rem;
+            background: #c9a961;
+            color: #fff;
             text-decoration: none;
-            font-weight: bold;
-            letter-spacing: 1px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
             transition: all 0.3s;
             animation: fadeInUp 1s ease 0.6s backwards;
-            border: 2px solid #d4af37;
+            border: 2px solid #c9a961;
+            border-radius: 2px;
         }
 
         .cta-button:hover {
             background: transparent;
-            color: #d4af37;
+            color: #c9a961;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(201, 169, 97, 0.3);
         }
 
         /* About Section */
         .about {
-            padding: 6rem 5%;
-            background: #f8f8f8;
+            padding: 7rem 5%;
+            background: #fff;
             text-align: center;
         }
 
         .about h2 {
-            font-size: 2.5rem;
-            color: #d4af37;
-            margin-bottom: 2rem;
+            font-size: 2.8rem;
+            color: #1a1a1a;
+            margin-bottom: 1rem;
             letter-spacing: 2px;
+            font-weight: 300;
+        }
+
+        .section-subtitle {
+            color: #c9a961;
+            font-size: 1rem;
+            letter-spacing: 3px;
+            margin-bottom: 3rem;
+            text-transform: uppercase;
+            font-weight: 500;
         }
 
         .about p {
-            max-width: 800px;
+            max-width: 850px;
             margin: 0 auto 2rem;
             font-size: 1.1rem;
-            color: #555;
-            line-height: 1.8;
+            color: #666;
+            line-height: 1.9;
+            font-weight: 300;
         }
 
         /* Menu Section */
         .menu {
-            padding: 6rem 5%;
-            background: #143C50;
-            color: #fff;
+            padding: 7rem 5%;
+            background: #fafafa;
+            color: #1a1a1a;
         }
 
         .menu h2 {
-            font-size: 2.5rem;
-            color: #d4af37;
+            font-size: 2.8rem;
+            color: #1a1a1a;
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 1rem;
             letter-spacing: 2px;
+            font-weight: 300;
         }
 
         .menu-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-            max-width: 1200px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            max-width: 1300px;
             margin: 0 auto;
         }
 
         .menu-item {
-            background: #1a4f66;
-            padding: 2rem;
-            border-left: 3px solid #d4af37;
-            transition: transform 0.3s;
+            background: #fff;
+            padding: 2.5rem;
+            border-radius: 4px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s;
+            border-top: 3px solid #c9a961;
         }
 
         .menu-item:hover {
-            transform: translateY(-5px);
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
         }
 
         .menu-item h3 {
-            color: #d4af37;
-            margin-bottom: 0.5rem;
-            font-size: 1.5rem;
+            color: #1a1a1a;
+            margin-bottom: 0.8rem;
+            font-size: 1.4rem;
+            font-weight: 600;
         }
 
         .menu-item p {
-            color: #ccc;
-            margin-bottom: 1rem;
-            font-style: italic;
+            color: #777;
+            line-height: 1.7;
+            font-weight: 300;
         }
 
-        .menu-item .price {
-            color: #d4af37;
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
-
-        /* Gallery Section */
-        .gallery {
-            padding: 6rem 5%;
-            background: #fff;
+        .menu-note {
+            text-align: center;
+            margin-top: 3rem;
+            color: #c9a961;
+            font-size: 1rem;
+            font-weight: 500;
+            letter-spacing: 1px;
         }
 
         /* Events Section */
         .events {
-            padding: 6rem 5%;
-            background: #f8f8f8;
+            padding: 7rem 5%;
+            background: linear-gradient(135deg, #1a2f3a 0%, #0d1d26 100%);
+            color: #fff;
         }
 
         .events h2 {
-            font-size: 2.5rem;
-            color: #d4af37;
+            font-size: 2.8rem;
+            color: #fff;
             text-align: center;
             margin-bottom: 1rem;
             letter-spacing: 2px;
+            font-weight: 300;
+        }
+
+        .events-intro {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 4rem;
+            font-size: 1.1rem;
+            font-weight: 300;
         }
 
         .events-container {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
             display: flex;
             flex-direction: column;
@@ -240,52 +299,47 @@
         }
 
         .event-card {
-            background: #fff;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
             border-radius: 8px;
-            padding: 2rem;
+            padding: 2.5rem;
             display: flex;
-            gap: 2rem;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
+            gap: 2.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s;
         }
 
         .event-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 5px 20px rgba(212, 175, 55, 0.3);
-        }
-
-        .event-card.featured {
-            border: 2px solid #d4af37;
-            background: linear-gradient(135deg, #fff 0%, #fffef8 100%);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+            background: rgba(255, 255, 255, 0.08);
         }
 
         .event-date {
-            min-width: 80px;
-            height: 80px;
-            background: #143C50;
+            min-width: 90px;
+            height: 90px;
+            background: #c9a961;
             border-radius: 8px;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            color: #d4af37;
-        }
-
-        .event-card.featured .event-date {
-            background: #d4af37;
-            color: #000;
+            color: #fff;
+            box-shadow: 0 5px 20px rgba(201, 169, 97, 0.4);
         }
 
         .event-date .month {
             font-size: 0.9rem;
-            font-weight: bold;
-            letter-spacing: 1px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
 
         .event-date .day {
-            font-size: 2rem;
-            font-weight: bold;
+            font-size: 2.2rem;
+            font-weight: 700;
             line-height: 1;
+            margin-top: 0.2rem;
         }
 
         .event-details {
@@ -293,134 +347,182 @@
         }
 
         .event-details h3 {
-            color: #143C50;
-            font-size: 1.8rem;
+            color: #fff;
+            font-size: 1.9rem;
             margin-bottom: 0.5rem;
+            font-weight: 600;
         }
 
         .event-artist {
-            color: #d4af37;
-            font-size: 1.2rem;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
+            color: #c9a961;
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 0.8rem;
         }
 
         .event-time {
-            color: #666;
+            color: rgba(255, 255, 255, 0.7);
             margin-bottom: 1rem;
             font-size: 0.95rem;
+            font-weight: 300;
         }
 
         .event-description {
-            color: #555;
-            line-height: 1.6;
-            margin-bottom: 1rem;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.7;
+            margin-bottom: 1.2rem;
+            font-weight: 300;
         }
 
         .event-tag {
             display: inline-block;
-            background: #d4af37;
-            color: #000;
-            padding: 0.4rem 1rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: bold;
-            letter-spacing: 1px;
+            background: rgba(201, 169, 97, 0.2);
+            color: #c9a961;
+            padding: 0.5rem 1.2rem;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            border: 1px solid rgba(201, 169, 97, 0.3);
         }
 
-        @media (max-width: 768px) {
-            .event-card {
-                flex-direction: column;
-            }
-
-            .event-date {
-                width: 80px;
-            }
+        /* Gallery Section */
+        .gallery {
+            padding: 7rem 5%;
+            background: #fff;
         }
 
         .gallery h2 {
-            font-size: 2.5rem;
-            color: #d4af37;
+            font-size: 2.8rem;
+            color: #1a1a1a;
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 1rem;
             letter-spacing: 2px;
+            font-weight: 300;
         }
 
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
-            max-width: 1200px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            max-width: 1300px;
             margin: 0 auto;
         }
 
         .gallery-item {
             aspect-ratio: 1;
-            background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
+            background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #d4af37;
-            font-size: 1.5rem;
-            transition: transform 0.3s;
+            color: #c9a961;
+            font-size: 3rem;
+            transition: all 0.3s;
             cursor: pointer;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
         }
 
         .gallery-item:hover {
-            transform: scale(1.05);
+            transform: scale(1.03);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .gallery-note {
+            text-align: center;
+            margin-top: 3rem;
+            color: #888;
+            font-weight: 300;
+        }
+
+        .gallery-note a {
+            color: #c9a961;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .gallery-note a:hover {
+            color: #a88b4f;
         }
 
         /* Contact Section */
         .contact {
-            padding: 6rem 5%;
-            background: #143C50;
+            padding: 7rem 5%;
+            background: #1a2f3a;
             color: #fff;
             text-align: center;
         }
 
         .contact h2 {
-            font-size: 2.5rem;
-            color: #d4af37;
-            margin-bottom: 2rem;
+            font-size: 2.8rem;
+            color: #fff;
+            margin-bottom: 1rem;
             letter-spacing: 2px;
+            font-weight: 300;
         }
 
         .contact-info {
-            max-width: 600px;
+            max-width: 650px;
             margin: 0 auto;
         }
 
         .contact-info p {
-            margin: 1rem 0;
+            margin: 1.5rem 0;
             font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 300;
+        }
+
+        .contact-info strong {
+            color: #c9a961;
+            font-weight: 600;
         }
 
         .social-links {
             display: flex;
             justify-content: center;
             gap: 2rem;
-            margin-top: 2rem;
+            margin-top: 3rem;
         }
 
         .social-links a {
-            color: #d4af37;
+            color: #c9a961;
             text-decoration: none;
-            font-size: 1.2rem;
-            transition: transform 0.3s;
-            display: inline-block;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.5rem;
+            border: 1px solid rgba(201, 169, 97, 0.3);
+            border-radius: 30px;
+            background: rgba(201, 169, 97, 0.1);
+            font-weight: 500;
         }
 
         .social-links a:hover {
-            transform: scale(1.2);
+            transform: translateY(-2px);
+            background: rgba(201, 169, 97, 0.2);
+            box-shadow: 0 5px 20px rgba(201, 169, 97, 0.3);
         }
 
         /* Footer */
         footer {
-            background: #0a2533;
-            color: #888;
+            background: #0d1d26;
+            color: rgba(255, 255, 255, 0.5);
             text-align: center;
-            padding: 2rem;
+            padding: 2.5rem;
             font-size: 0.9rem;
+            font-weight: 300;
         }
 
         /* Animations */
@@ -451,11 +553,12 @@
                 left: -100%;
                 top: 70px;
                 flex-direction: column;
-                background-color: rgba(20, 60, 80, 0.98);
+                background-color: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(10px);
                 width: 100%;
                 text-align: center;
                 transition: left 0.3s;
-                box-shadow: 0 10px 27px rgba(0, 0, 0, 0.5);
+                box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
                 padding: 2rem 0;
                 gap: 1.5rem;
             }
@@ -465,7 +568,7 @@
             }
 
             .nav-links a {
-                font-size: 1.1rem;
+                font-size: 1rem;
             }
 
             .hero-content h1 {
@@ -482,7 +585,7 @@
             }
 
             .logo {
-                font-size: 1.5rem;
+                font-size: 1.4rem;
             }
 
             .menu-grid {
@@ -494,7 +597,7 @@
             .events h2,
             .gallery h2,
             .contact h2 {
-                font-size: 2rem;
+                font-size: 2.2rem;
             }
 
             .about,
@@ -502,25 +605,25 @@
             .events,
             .gallery,
             .contact {
-                padding: 4rem 5%;
+                padding: 5rem 5%;
             }
 
             .event-card {
                 flex-direction: column;
-                padding: 1.5rem;
+                padding: 2rem;
             }
 
             .event-date {
-                width: 80px;
+                width: 90px;
             }
 
             .event-details h3 {
-                font-size: 1.5rem;
+                font-size: 1.6rem;
             }
 
             .cta-button {
-                padding: 0.8rem 2rem;
-                font-size: 0.9rem;
+                padding: 1rem 2.5rem;
+                font-size: 0.85rem;
             }
 
             .gallery-grid {
@@ -529,6 +632,10 @@
         }
 
         @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
             .hero-content img {
                 max-width: 95%;
             }
@@ -538,17 +645,11 @@
             .events h2,
             .gallery h2,
             .contact h2 {
-                font-size: 1.75rem;
-            }
-
-            .nav-links {
-                flex-direction: column;
-                gap: 0.75rem;
-                align-items: center;
+                font-size: 1.9rem;
             }
 
             .logo {
-                font-size: 1.3rem;
+                font-size: 1.2rem;
             }
 
             .gallery-grid {
@@ -556,12 +657,17 @@
             }
 
             .event-details h3 {
-                font-size: 1.3rem;
+                font-size: 1.4rem;
             }
 
             .event-time,
             .event-description {
                 font-size: 0.9rem;
+            }
+
+            .social-links {
+                flex-direction: column;
+                align-items: center;
             }
         }
     </style>
@@ -576,12 +682,12 @@
             <span></span>
         </div>
         <ul class="nav-links">
-            <li><a href="#home">HOME</a></li>
-            <li><a href="#about">ABOUT</a></li>
-            <li><a href="#specialties">SPECIALTIES</a></li>
-            <li><a href="#events">EVENTS</a></li>
-            <li><a href="#gallery">GALLERY</a></li>
-            <li><a href="#contact">CONTACT</a></li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#specialties">Specialties</a></li>
+            <li><a href="#events">Events</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
@@ -589,13 +695,14 @@
     <section id="home" class="hero">
         <div class="hero-content">
             <img src="richpour.png" alt="The Rich Pour">
-            <a href="#about" class="cta-button">DISCOVER OUR STORY</a>
+            <a href="#about" class="cta-button">Discover Our Story</a>
         </div>
     </section>
 
     <!-- About Section -->
     <section id="about" class="about">
         <h2>About Us</h2>
+        <p class="section-subtitle">Where Quality Meets Comfort</p>
         <p>
             Welcome to The Rich Pour, your neighborhood destination for delicious bites and refreshing beverages. 
             Located in the vibrant heart of New York, we're a cozy cafe where quality meets comfort. 
@@ -612,33 +719,34 @@
     <!-- Specialties Section -->
     <section id="specialties" class="menu">
         <h2>What We Offer</h2>
+        <p class="section-subtitle">Crafted With Care</p>
         <div class="menu-grid">
             <div class="menu-item">
                 <h3>Artisan Coffee</h3>
-                <p>Expertly brewed espresso drinks, pour-overs, and specialty coffee</p>
+                <p>Expertly brewed espresso drinks, pour-overs, and specialty coffee crafted by our skilled baristas</p>
             </div>
             <div class="menu-item">
                 <h3>Fresh Beverages</h3>
-                <p>Handcrafted teas, fresh juices, smoothies, and seasonal drinks</p>
+                <p>Handcrafted teas, fresh juices, smoothies, and seasonal drinks made with premium ingredients</p>
             </div>
             <div class="menu-item">
                 <h3>Savory Bites</h3>
-                <p>Gourmet sandwiches, wraps, and fresh salads made daily</p>
+                <p>Gourmet sandwiches, wraps, and fresh salads made daily with locally sourced produce</p>
             </div>
             <div class="menu-item">
                 <h3>Sweet Treats</h3>
-                <p>Freshly baked pastries, cakes, and desserts</p>
+                <p>Freshly baked pastries, cakes, and desserts that pair perfectly with your favorite drink</p>
             </div>
             <div class="menu-item">
                 <h3>Breakfast & Brunch</h3>
-                <p>Delicious morning favorites to start your day right</p>
+                <p>Delicious morning favorites to start your day right, served all day on weekends</p>
             </div>
             <div class="menu-item">
                 <h3>Light Lunch</h3>
-                <p>Perfect midday meals and healthy options</p>
+                <p>Perfect midday meals and healthy options for those on the go</p>
             </div>
         </div>
-        <p style="text-align: center; margin-top: 2rem; color: #d4af37; font-size: 1.1rem;">
+        <p class="menu-note">
             Visit us in-store to see our full menu and daily specials!
         </p>
     </section>
@@ -646,61 +754,62 @@
     <!-- Events Calendar Section -->
     <section id="events" class="events">
         <h2>Upcoming Events</h2>
-        <p style="text-align: center; color: #ccc; margin-bottom: 3rem; font-size: 1.1rem;">
-            Join us for special nights of music, community, and great vibes
+        <p class="section-subtitle" style="color: #c9a961;">Special Experiences Await</p>
+        <p class="events-intro">
+            Join us for special nights of music, creativity, and community. Check out what's coming up!
         </p>
         <div class="events-container">
-            <div class="event-card featured">
-                <div class="event-date">
-                    <span class="month">NOV</span>
-                    <span class="day">7</span>
-                </div>
-                <div class="event-details">
-                    <h3>Open Mic Night</h3>
-                    <p class="event-artist">Hosted by Luca DiGrigoli</p>
-                    <p class="event-time">📍 Friday, November 7th | Sign-ups: 7:00 PM | Starts: 7:30 PM</p>
-                    <p class="event-description">
-                        Join us for an unforgettable evening of live performances! Hosted by Luca DiGrigoli, 
-                        this open mic welcomes all talents. Perform 2 songs or 5 minutes. Bring your talent 
-                        or just come enjoy the show with delicious bites and beverages.
-                    </p>
-                    <span class="event-tag">FREE ENTRY</span>
-                </div>
-            </div>
-            <div class="event-card featured">
-                <div class="event-date">
-                    <span class="month">NOV</span>
-                    <span class="day">10</span>
-                </div>
-                <div class="event-details">
-                    <h3>Tea Leaf Reading Experience</h3>
-                    <p class="event-artist">With Frank Bruni</p>
-                    <p class="event-time">📍 Sunday, November 10th | 7:00 PM</p>
-                    <p class="event-description">
-                        Immerse yourself in the soothing glow of candlelight as one of Long Island's top-rated 
-                        psychic medium & tea reader unveils the messages hidden within your cup. Tickets include 
-                        a private 15 minute tea reading, a glass of wine/espresso martini/or signature latte & tapas bites.
-                    </p>
-                    <span class="event-tag">LIMITED TICKETS</span>
-                    <p style="margin-top: 1rem; color: #d4af37; font-size: 0.95rem;">
-                        <strong>To get your ticket, email:</strong> therichpourbbh@gmail.com
-                    </p>
-                </div>
-            </div>
+            
             <div class="event-card">
                 <div class="event-date">
-                    <span class="month">NOV</span>
-                    <span class="day">21</span>
+                    <span class="month">JAN</span>
+                    <span class="day">16</span>
                 </div>
                 <div class="event-details">
                     <h3>Open Mic Night</h3>
                     <p class="event-artist">Hosted by Luca DiGrigoli</p>
-                    <p class="event-time">📍 Friday, November 21st | Sign-ups: 7:00 PM | Starts: 7:30 PM</p>
+                    <p class="event-time">📍 Thursday, January 16th | Sign-ups: 7:00 PM | Starts: 7:30 PM</p>
                     <p class="event-description">
-                        Back by popular demand! Join us for another night of incredible talent. 
-                        2 songs or 5 minutes per person. All performers welcome!
+                        Share your talent with our community! Whether you're a musician, poet, comedian, or storyteller, 
+                        we'd love to hear from you. 2 songs or 5 minutes per person. All performers welcome!
                     </p>
-                    <span class="event-tag">FREE ENTRY</span>
+                    <span class="event-tag">Free Entry</span>
+                </div>
+            </div>
+
+            <div class="event-card">
+                <div class="event-date">
+                    <span class="month">JAN</span>
+                    <span class="day">22</span>
+                </div>
+                <div class="event-details">
+                    <h3>Sip & Create</h3>
+                    <p class="event-artist">Creative Evening Workshop</p>
+                    <p class="event-time">📍 Wednesday, January 22nd | 6:30 PM - 9:00 PM</p>
+                    <p class="event-description">
+                        Unleash your creativity in a relaxed, social setting! Enjoy your favorite beverages while 
+                        working on art projects. All materials provided. No experience necessary—just bring your 
+                        imagination and sense of fun!
+                    </p>
+                    <span class="event-tag">RSVP Recommended</span>
+                </div>
+            </div>
+
+            <div class="event-card">
+                <div class="event-date">
+                    <span class="month">JAN</span>
+                    <span class="day">26</span>
+                </div>
+                <div class="event-details">
+                    <h3>Psychic Night</h3>
+                    <p class="event-artist">An Evening of Mystical Insights</p>
+                    <p class="event-time">📍 Sunday, January 26th | 6:00 PM - 10:00 PM</p>
+                    <p class="event-description">
+                        Explore the unknown with our gifted psychic reader! Book your personal reading and discover 
+                        what the universe has in store. Tarot, palm reading, and spiritual guidance available. 
+                        Walk-ins welcome, but reservations are encouraged.
+                    </p>
+                    <span class="event-tag">Limited Spots</span>
                 </div>
             </div>
         </div>
@@ -709,22 +818,24 @@
     <!-- Gallery Section -->
     <section id="gallery" class="gallery">
         <h2>Experience The Rich Pour</h2>
+        <p class="section-subtitle">A Visual Journey</p>
         <div class="gallery-grid">
-            <div class="gallery-item">☕</div>
-            <div class="gallery-item">🥐</div>
+            <div class="gallery-item"><img src="matcha.png" alt="Matcha"></div>
+            <div class="gallery-item"><img src="electriclemon.png" alt="Electric Lemon"></div>
             <div class="gallery-item">🥗</div>
             <div class="gallery-item">🧃</div>
             <div class="gallery-item">🍰</div>
             <div class="gallery-item">🥪</div>
         </div>
-        <p style="text-align: center; margin-top: 2rem; color: #888;">
-            Follow us on Instagram <a href="https://www.instagram.com/therichpour_ny/" style="color: #d4af37; text-decoration: none;">@therichpour_ny</a> for daily specials and cafe vibes
+        <p class="gallery-note">
+            Follow us on Instagram <a href="https://www.instagram.com/therichpour_ny/" target="_blank">@therichpour_ny</a> for daily specials and cafe vibes
         </p>
     </section>
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <h2>Visit Us</h2>
+        <p class="section-subtitle" style="color: #c9a961;">We'd Love To See You</p>
         <div class="contact-info">
             <p><strong>Location:</strong> New York, NY</p>
             <p><strong>Hours:</strong> Mon-Fri: 7AM-7PM | Sat-Sun: 8AM-8PM</p>
@@ -732,9 +843,9 @@
             <p><strong>Phone:</strong> (555) 123-4567</p>
             
             <div class="social-links">
-                <a href="https://www.instagram.com/therichpour_ny/" target="_blank">📷 Instagram</a>
-                <a href="#">📘 Facebook</a>
-                <a href="#">🐦 Twitter</a>
+                <a href="https://www.instagram.com/therichpour_ny/" target="_blank">
+                    <span>📷</span> Follow on Instagram
+                </a>
             </div>
         </div>
     </section>
@@ -780,11 +891,38 @@
         window.addEventListener('scroll', () => {
             const nav = document.querySelector('nav');
             if (window.scrollY > 50) {
-                nav.style.padding = '1rem 5%';
+                nav.classList.add('scrolled');
             } else {
-                nav.style.padding = '1.5rem 5%';
+                nav.classList.remove('scrolled');
             }
         });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(section);
+        });
+
+        // Initial load - show first section
+        document.querySelector('.hero').style.opacity = '1';
+        document.querySelector('.hero').style.transform = 'translateY(0)';
     </script>
 </body>
 </html>
