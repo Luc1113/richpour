@@ -266,127 +266,6 @@
             letter-spacing: 1px;
         }
 
-        /* Events Section */
-        .events {
-            padding: 7rem 5%;
-            background: linear-gradient(135deg, #1a2f3a 0%, #0d1d26 100%);
-            color: #fff;
-        }
-
-        .events h2 {
-            font-size: 2.8rem;
-            color: #fff;
-            text-align: center;
-            margin-bottom: 1rem;
-            letter-spacing: 2px;
-            font-weight: 300;
-        }
-
-        .events-intro {
-            text-align: center;
-            color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 4rem;
-            font-size: 1.1rem;
-            font-weight: 300;
-        }
-
-        .events-container {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-        }
-
-        .event-card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border-radius: 8px;
-            padding: 2.5rem;
-            display: flex;
-            gap: 2.5rem;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s;
-        }
-
-        .event-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
-            background: rgba(255, 255, 255, 0.08);
-        }
-
-        .event-date {
-            min-width: 90px;
-            height: 90px;
-            background: #c9a961;
-            border-radius: 8px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            box-shadow: 0 5px 20px rgba(201, 169, 97, 0.4);
-        }
-
-        .event-date .month {
-            font-size: 0.9rem;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        .event-date .day {
-            font-size: 2.2rem;
-            font-weight: 700;
-            line-height: 1;
-            margin-top: 0.2rem;
-        }
-
-        .event-details {
-            flex: 1;
-        }
-
-        .event-details h3 {
-            color: #fff;
-            font-size: 1.9rem;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-        }
-
-        .event-artist {
-            color: #c9a961;
-            font-size: 1.1rem;
-            font-weight: 500;
-            margin-bottom: 0.8rem;
-        }
-
-        .event-time {
-            color: rgba(255, 255, 255, 0.7);
-            margin-bottom: 1rem;
-            font-size: 0.95rem;
-            font-weight: 300;
-        }
-
-        .event-description {
-            color: rgba(255, 255, 255, 0.8);
-            line-height: 1.7;
-            margin-bottom: 1.2rem;
-            font-weight: 300;
-        }
-
-        .event-tag {
-            display: inline-block;
-            background: rgba(201, 169, 97, 0.2);
-            color: #c9a961;
-            padding: 0.5rem 1.2rem;
-            border-radius: 30px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            border: 1px solid rgba(201, 169, 97, 0.3);
-        }
-
         /* Gallery Section */
         .gallery {
             padding: 7rem 5%;
@@ -594,7 +473,6 @@
 
             .about h2,
             .menu h2,
-            .events h2,
             .gallery h2,
             .contact h2 {
                 font-size: 2.2rem;
@@ -602,23 +480,9 @@
 
             .about,
             .menu,
-            .events,
             .gallery,
             .contact {
                 padding: 5rem 5%;
-            }
-
-            .event-card {
-                flex-direction: column;
-                padding: 2rem;
-            }
-
-            .event-date {
-                width: 90px;
-            }
-
-            .event-details h3 {
-                font-size: 1.6rem;
             }
 
             .cta-button {
@@ -642,7 +506,6 @@
 
             .about h2,
             .menu h2,
-            .events h2,
             .gallery h2,
             .contact h2 {
                 font-size: 1.9rem;
@@ -654,15 +517,6 @@
 
             .gallery-grid {
                 grid-template-columns: 1fr;
-            }
-
-            .event-details h3 {
-                font-size: 1.4rem;
-            }
-
-            .event-time,
-            .event-description {
-                font-size: 0.9rem;
             }
 
             .social-links {
@@ -685,7 +539,6 @@
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#specialties">Specialties</a></li>
-            <li><a href="#events">Events</a></li>
             <li><a href="#gallery">Gallery</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
@@ -749,70 +602,6 @@
         <p class="menu-note">
             Visit us in-store to see our full menu and daily specials!
         </p>
-    </section>
-
-    <!-- Events Calendar Section -->
-    <section id="events" class="events">
-        <h2>Upcoming Events</h2>
-        <p class="section-subtitle" style="color: #c9a961;">Special Experiences Await</p>
-        <p class="events-intro">
-            Join us for special nights of music, creativity, and community. Check out what's coming up!
-        </p>
-        <div class="events-container">
-            
-            <div class="event-card">
-                <div class="event-date">
-                    <span class="month">JAN</span>
-                    <span class="day">16</span>
-                </div>
-                <div class="event-details">
-                    <h3>Open Mic Night</h3>
-                    <p class="event-artist">Hosted by Luca DiGrigoli</p>
-                    <p class="event-time">📍 Thursday, January 16th | Sign-ups: 7:00 PM | Starts: 7:30 PM</p>
-                    <p class="event-description">
-                        Share your talent with our community! Whether you're a musician, poet, comedian, or storyteller, 
-                        we'd love to hear from you. 2 songs or 5 minutes per person. All performers welcome!
-                    </p>
-                    <span class="event-tag">Free Entry</span>
-                </div>
-            </div>
-
-            <div class="event-card">
-                <div class="event-date">
-                    <span class="month">JAN</span>
-                    <span class="day">22</span>
-                </div>
-                <div class="event-details">
-                    <h3>Sip & Create</h3>
-                    <p class="event-artist">Creative Evening Workshop</p>
-                    <p class="event-time">📍 Wednesday, January 22nd | 6:30 PM - 9:00 PM</p>
-                    <p class="event-description">
-                        Unleash your creativity in a relaxed, social setting! Enjoy your favorite beverages while 
-                        working on art projects. All materials provided. No experience necessary—just bring your 
-                        imagination and sense of fun!
-                    </p>
-                    <span class="event-tag">RSVP Recommended</span>
-                </div>
-            </div>
-
-            <div class="event-card">
-                <div class="event-date">
-                    <span class="month">JAN</span>
-                    <span class="day">26</span>
-                </div>
-                <div class="event-details">
-                    <h3>Psychic Night</h3>
-                    <p class="event-artist">An Evening of Mystical Insights</p>
-                    <p class="event-time">📍 Sunday, January 26th | 6:00 PM - 10:00 PM</p>
-                    <p class="event-description">
-                        Explore the unknown with our gifted psychic reader! Book your personal reading and discover 
-                        what the universe has in store. Tarot, palm reading, and spiritual guidance available. 
-                        Walk-ins welcome, but reservations are encouraged.
-                    </p>
-                    <span class="event-tag">Limited Spots</span>
-                </div>
-            </div>
-        </div>
     </section>
 
     <!-- Gallery Section -->
