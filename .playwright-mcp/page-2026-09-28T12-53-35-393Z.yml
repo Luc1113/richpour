@@ -1,0 +1,147 @@
+- generic [active] [ref=f26e1]:
+  - banner [ref=f26e2]:
+    - generic [ref=f26e4]:
+      - link "The Rich Pour, back to top" [ref=f26e5] [cursor=pointer]:
+        - /url: "#top"
+        - img "The Rich Pour, Bites & Beverage House" [ref=f26e7]
+      - navigation "Main" [ref=f26e8]:
+        - list [ref=f26e9]:
+          - listitem [ref=f26e10]:
+            - link "About" [ref=f26e11] [cursor=pointer]:
+              - /url: "#about"
+          - listitem [ref=f26e12]:
+            - link "Menu" [ref=f26e13] [cursor=pointer]:
+              - /url: "#menu"
+          - listitem [ref=f26e14]:
+            - link "Private parties" [ref=f26e15] [cursor=pointer]:
+              - /url: "#parties"
+          - listitem [ref=f26e16]:
+            - link "Visit" [ref=f26e17] [cursor=pointer]:
+              - /url: "#visit"
+          - listitem [ref=f26e18]:
+            - link "Order on DoorDash" [ref=f26e19] [cursor=pointer]:
+              - /url: https://www.doordash.com/store/the-rich-pour-bites-&-beverage-house-massapequa-park-39579205/
+  - main [ref=f26e20]:
+    - generic [ref=f26e22]:
+      - generic [ref=f26e23]:
+        - heading "Coffee, matcha and small plates in a room full of color." [level=1] [ref=f26e24]
+        - paragraph [ref=f26e25]: The Rich Pour is a bites & beverage house in Massapequa Park, NY. Stop in for a morning latte, stay for lunch, or book the café for your next party.
+        - paragraph [ref=f26e26]: Open today 7am–7pm
+        - generic [ref=f26e27]:
+          - link "Order on DoorDash" [ref=f26e28] [cursor=pointer]:
+            - /url: https://www.doordash.com/store/the-rich-pour-bites-&-beverage-house-massapequa-park-39579205/
+          - link "See the menu" [ref=f26e29] [cursor=pointer]:
+            - /url: "#menu"
+      - figure [ref=f26e30]:
+        - img "Iced matcha latte in a Rich Pour cup on the counter, with the café's painted wall behind it" [ref=f26e31]
+    - generic [ref=f26e34]:
+      - heading "A neighborhood café with a lot of personality." [level=2] [ref=f26e35]
+      - generic [ref=f26e36]:
+        - paragraph [ref=f26e37]: We pour espresso, matcha and bright house lemonades, and plate fresh food to go with them, in a room that looks nothing like the coffee shop down the road.
+        - paragraph [ref=f26e38]: Grab a coffee on the way to work, meet a friend for brunch, or settle in for the afternoon. Everything is made with good ingredients and a little extra care, one cup and one bite at a time.
+    - generic [ref=f26e40]:
+      - heading "What we pour and plate" [level=2] [ref=f26e42]
+      - generic [ref=f26e43]:
+        - figure [ref=f26e44]:
+          - 'img "Electric Lemon: a violet-to-pink layered lemonade with a lemon slice and dried flowers" [ref=f26e45]'
+        - list [ref=f26e47]:
+          - listitem [ref=f26e48]:
+            - heading "Coffee" [level=3] [ref=f26e49]
+            - paragraph [ref=f26e50]: Espresso drinks, pour-overs and signature lattes, hot or iced.
+          - listitem [ref=f26e51]:
+            - heading "Matcha & tea" [level=3] [ref=f26e52]
+            - paragraph [ref=f26e53]: Whisked matcha lattes and loose-leaf teas.
+          - listitem [ref=f26e54]:
+            - heading "Lemonades & more" [level=3] [ref=f26e55]
+            - paragraph [ref=f26e56]: House lemonades, juices, smoothies and seasonal drinks.
+          - listitem [ref=f26e57]:
+            - heading "Breakfast & brunch" [level=3] [ref=f26e58]
+            - paragraph [ref=f26e59]: Morning favorites, served all day on weekends.
+          - listitem [ref=f26e60]:
+            - heading "Savory bites" [level=3] [ref=f26e61]
+            - paragraph [ref=f26e62]: Sandwiches, wraps and salads made fresh every day.
+          - listitem [ref=f26e63]:
+            - heading "Sweets" [level=3] [ref=f26e64]
+            - paragraph [ref=f26e65]: Pastries, cakes and desserts to go with your drink.
+    - generic [ref=f26e68]:
+      - generic [ref=f26e69]:
+        - heading "Host your private party at The Rich Pour" [level=2] [ref=f26e70]
+        - paragraph [ref=f26e71]: Book the café for birthdays, showers, work get-togethers and other celebrations, with drinks and bites from our kitchen.
+        - paragraph [ref=f26e72]:
+          - generic [ref=f26e73]: Email for details
+          - link "therichpourbbh@gmail.com" [ref=f26e74] [cursor=pointer]:
+            - /url: mailto:therichpourbbh@gmail.com?subject=Private%20party
+      - generic [ref=f26e75]:
+        - heading "We also host events" [level=3] [ref=f26e76]
+        - list [ref=f26e77]:
+          - listitem [ref=f26e78]:
+            - heading "Open mic" [level=4] [ref=f26e79]
+            - paragraph [ref=f26e80]: Music, poetry, comedy and stories. Everyone's welcome.
+          - listitem [ref=f26e81]:
+            - heading "Sip & create" [level=4] [ref=f26e82]
+            - paragraph [ref=f26e83]: A relaxed art night with drinks. Materials provided.
+          - listitem [ref=f26e84]:
+            - heading "Tea leaf readings" [level=4] [ref=f26e85]
+            - paragraph [ref=f26e86]: Candlelit readings with a local psychic medium.
+        - paragraph [ref=f26e87]:
+          - text: Dates are posted on
+          - link "Instagram" [ref=f26e88] [cursor=pointer]:
+            - /url: https://www.instagram.com/therichpour_ny/
+          - text: . Email us for event details and tickets.
+    - generic [ref=f26e90]:
+      - heading "Come see us" [level=2] [ref=f26e91]
+      - generic [ref=f26e92]:
+        - generic [ref=f26e93]:
+          - generic [ref=f26e94]:
+            - heading "Email" [level=3] [ref=f26e95]
+            - paragraph [ref=f26e96]:
+              - link "therichpourbbh@gmail.com" [ref=f26e97] [cursor=pointer]:
+                - /url: mailto:therichpourbbh@gmail.com
+          - generic [ref=f26e98]:
+            - heading "Instagram" [level=3] [ref=f26e99]
+            - paragraph [ref=f26e100]:
+              - link "@therichpour_ny" [ref=f26e101] [cursor=pointer]:
+                - /url: https://www.instagram.com/therichpour_ny/
+          - generic [ref=f26e102]:
+            - heading "Delivery & pickup" [level=3] [ref=f26e103]
+            - link "Order on DoorDash" [ref=f26e104] [cursor=pointer]:
+              - /url: https://www.doordash.com/store/the-rich-pour-bites-&-beverage-house-massapequa-park-39579205/
+        - generic [ref=f26e105]:
+          - heading "Hours" [level=3] [ref=f26e106]
+          - table [ref=f26e107]:
+            - rowgroup [ref=f26e108]:
+              - row [ref=f26e109]:
+                - rowheader "MondayToday" [ref=f26e110]
+                - cell "7am–7pm" [ref=f26e111]
+              - row [ref=f26e112]:
+                - rowheader "Tuesday" [ref=f26e113]
+                - cell "7am–7pm" [ref=f26e114]
+              - row [ref=f26e115]:
+                - rowheader "Wednesday" [ref=f26e116]
+                - cell "7am–7pm" [ref=f26e117]
+              - row [ref=f26e118]:
+                - rowheader "Thursday" [ref=f26e119]
+                - cell "7am–7pm" [ref=f26e120]
+              - row [ref=f26e121]:
+                - rowheader "Friday" [ref=f26e122]
+                - cell "7am–7pm" [ref=f26e123]
+              - row [ref=f26e124]:
+                - rowheader "Saturday" [ref=f26e125]
+                - cell "8am–8pm" [ref=f26e126]
+              - row [ref=f26e127]:
+                - rowheader "Sunday" [ref=f26e128]
+                - cell "8am–8pm" [ref=f26e129]
+    - region "Map" [ref=f26e130]:
+      - iframe [ref=f26e132]
+      - generic [ref=f26e133]:
+        - generic [ref=f26e134]: 4863 Merrick Rd, Massapequa Park, NY 11762
+        - link "Get directions" [ref=f26e135] [cursor=pointer]:
+          - /url: https://www.google.com/maps/search/?api=1&query=The+Rich+Pour+Bites+%26+Beverage+House+Massapequa+Park+NY
+  - contentinfo [ref=f26e136]:
+    - generic [ref=f26e138]:
+      - img "The Rich Pour" [ref=f26e140]
+      - paragraph [ref=f26e141]: © 2026 The Rich Pour, Bites & Beverage House
+      - paragraph [ref=f26e142]:
+        - text: Made with <3 by
+        - link "luca" [ref=f26e143] [cursor=pointer]:
+          - /url: https://lucawebdesigns.com

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,6 +28,16 @@
             --rule: rgba(20, 35, 43, 0.14);
 
             --spin: 0deg;
+
+            /* The café's painted wall, as one reusable stroke pattern */
+            --paint-gradient: linear-gradient(97deg,
+                    #1c2a6b 0 4%, #e8428f 4% 9%, #f6c9dc 9% 11%, #d4e84a 11% 14%,
+                    #86b8e6 14% 19%, #111a3a 19% 21%, #e8428f 21% 27%, #fff 27% 28%,
+                    #7d4fc8 28% 33%, #c9a24b 33% 34.5%, #86b8e6 34.5% 38%, #e8428f 38% 41%,
+                    #1c2a6b 41% 46%, #d4e84a 46% 48%, #f6c9dc 48% 53%, #0a4d66 53% 56%,
+                    #e8428f 56% 62%, #111a3a 62% 63.5%, #86b8e6 63.5% 68%, #d4e84a 68% 70%,
+                    #7d4fc8 70% 75%, #fff 75% 76%, #e8428f 76% 81%, #c9a24b 81% 82%,
+                    #1c2a6b 82% 87%, #f6c9dc 87% 90%, #86b8e6 90% 94%, #e8428f 94% 100%);
 
             --display: 'Gloock', 'Didot', 'Bodoni 72', Georgia, serif;
             --text: 'Schibsted Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -97,15 +107,7 @@
             position: relative;
             height: var(--paint-h, 88px);
             overflow: hidden;
-            background:
-                linear-gradient(97deg,
-                    #1c2a6b 0 4%, #e8428f 4% 9%, #f6c9dc 9% 11%, #d4e84a 11% 14%,
-                    #86b8e6 14% 19%, #111a3a 19% 21%, #e8428f 21% 27%, #fff 27% 28%,
-                    #7d4fc8 28% 33%, #c9a24b 33% 34.5%, #86b8e6 34.5% 38%, #e8428f 38% 41%,
-                    #1c2a6b 41% 46%, #d4e84a 46% 48%, #f6c9dc 48% 53%, #0a4d66 53% 56%,
-                    #e8428f 56% 62%, #111a3a 62% 63.5%, #86b8e6 63.5% 68%, #d4e84a 68% 70%,
-                    #7d4fc8 70% 75%, #fff 75% 76%, #e8428f 76% 81%, #c9a24b 81% 82%,
-                    #1c2a6b 82% 87%, #f6c9dc 87% 90%, #86b8e6 90% 94%, #e8428f 94% 100%);
+            background: var(--paint-gradient);
             filter: url(#brush);
         }
 
@@ -120,62 +122,106 @@
             mix-blend-mode: soft-light;
         }
 
-        /* ---------- Header ---------- */
+        /* ---------- Header: a floating bar with a painted edge ---------- */
         .site-header {
             position: sticky;
             top: 0;
             z-index: 50;
-            background: color-mix(in srgb, var(--paper) 70%, transparent);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid transparent;
-            transition: border-color 0.3s;
+            padding-top: 12px;
         }
 
-        .site-header.is-scrolled { border-bottom-color: var(--rule); }
-
-        .site-header .wrap {
+        .nav-shell {
+            position: relative;
             display: flex;
             align-items: center;
             justify-content: space-between;
             gap: 1.5rem;
-            height: 84px;
+            height: 78px;
+            padding: 0 12px 0 22px;
+            background: color-mix(in srgb, var(--paper) 72%, transparent);
+            backdrop-filter: blur(14px) saturate(1.4);
+            -webkit-backdrop-filter: blur(14px) saturate(1.4);
+            border: 1px solid rgba(255, 255, 255, 0.75);
+            border-radius: 22px;
+            box-shadow: 0 12px 32px -18px rgba(10, 77, 102, 0.35);
+            transition: box-shadow 0.3s;
         }
 
-        .brand img { width: 142px; }
+        .site-header.is-scrolled .nav-shell { box-shadow: 0 16px 40px -16px rgba(10, 77, 102, 0.45); }
+
+        .nav-shell::after {
+            /* the café wall, as a painted stroke along the bar's bottom edge */
+            content: '';
+            position: absolute;
+            left: 26px;
+            right: 26px;
+            bottom: -4px;
+            height: 7px;
+            background: var(--paint-gradient);
+            filter: url(#brush);
+            border-radius: 4px;
+            pointer-events: none;
+        }
+
+        .brand img { width: 128px; }
 
         .nav-list {
             display: flex;
-            gap: 2rem;
+            gap: 1.75rem;
             align-items: center;
             list-style: none;
         }
 
         .nav-list a {
+            position: relative;
+            isolation: isolate;
+            display: inline-block;
+            padding: 0.35rem 0.1rem;
             text-decoration: none;
             font-weight: 500;
             font-size: 0.975rem;
             color: var(--ink);
-            padding: 0.25rem 0;
-            background: linear-gradient(var(--pink), var(--pink)) left bottom / 0 2px no-repeat;
-            transition: background-size 0.25s;
         }
 
-        .nav-list a:hover { background-size: 100% 2px; }
+        .nav-list a::after {
+            /* painted highlighter stroke behind the link text */
+            content: '';
+            position: absolute;
+            left: -0.35em;
+            right: -0.35em;
+            bottom: 0.3em;
+            height: 0.6em;
+            z-index: -1;
+            background: var(--swash, #f6c9dc);
+            border-radius: 40% 60% 50% 45% / 60% 40% 55% 45%;
+            filter: url(#brush-h);
+            clip-path: inset(0 100% 0 0);
+            transition: clip-path 0.35s cubic-bezier(0.65, 0, 0.35, 1);
+        }
+
+        .nav-list a:hover::after,
+        .nav-list a.is-current::after { clip-path: inset(0 0 0 0); }
+
+        .nav-list li:nth-child(1) a { --swash: #f6c9dc; }
+        .nav-list li:nth-child(2) a { --swash: #e5f08f; }
+        .nav-list li:nth-child(3) a { --swash: #bcd6f2; }
+        .nav-list li:nth-child(4) a { --swash: #d9c8f5; }
 
         .nav-list .nav-order {
-            padding: 0.55rem 1.1rem;
+            padding: 0.7rem 1.25rem;
             border-radius: 999px;
             background: var(--teal);
             color: #fff;
             font-weight: 600;
-            transition: background-color 0.2s;
+            transition: background-color 0.2s, color 0.2s;
         }
 
-        .nav-list .nav-order:hover { background: var(--teal-deep); }
+        .nav-list .nav-order::after { content: none; }
+        .nav-list .nav-order:hover { background: var(--lime); color: var(--teal-deep); }
 
         .nav-toggle {
             display: none;
+            margin-right: -2px;
             width: 44px;
             height: 44px;
             border: 0;
@@ -286,7 +332,26 @@
         .hero-paint { --paint-h: clamp(64px, 9vw, 120px); }
 
         /* ---------- Sections ---------- */
+        main > section { scroll-margin-top: 96px; }
+
         .section { padding: clamp(4.5rem, 10vw, 8.5rem) 0; }
+
+        .section-title::after {
+            /* Hand-painted swash under every section title */
+            content: '';
+            display: block;
+            width: min(5.5em, 70%);
+            height: 0.2em;
+            margin-top: 0.3em;
+            background: linear-gradient(90deg, var(--swash-a, var(--pink)), var(--swash-b, var(--violet)));
+            border-radius: 40% 60% 50% 45% / 60% 40% 55% 45%;
+            filter: url(#brush-h);
+        }
+
+        .about { --swash-a: var(--pink); --swash-b: var(--sky); }
+        .menu { --swash-a: var(--lime); --swash-b: var(--pink); }
+        .evenings { --swash-a: var(--lime); --swash-b: var(--sky); }
+        .visit { --swash-a: var(--violet); --swash-b: var(--pink); }
 
         .section-title {
             font-size: clamp(2.3rem, 5vw, 4rem);
@@ -333,7 +398,21 @@
             align-items: start;
         }
 
-        .feature { position: sticky; top: 110px; }
+        .feature {
+            position: sticky;
+            top: 110px;
+            isolation: isolate;
+        }
+
+        .feature::before {
+            content: '';
+            position: absolute;
+            inset: 7% -5% -5% 7%;
+            z-index: -1;
+            background: var(--paint-gradient);
+            filter: url(#brush);
+            transform: rotate(-3deg);
+        }
 
         .feature img {
             aspect-ratio: 1 / 1;
@@ -353,6 +432,25 @@
 
         .menu-list li:last-child { border-bottom: 1px solid var(--rule); }
 
+        .menu-list h3::before {
+            content: '';
+            display: inline-block;
+            width: 0.75em;
+            height: 0.45em;
+            margin-right: 0.45em;
+            border-radius: 45% 55% 40% 60% / 55% 45% 60% 40%;
+            background: var(--dab, var(--pink));
+            filter: url(#brush-h);
+            vertical-align: 0.1em;
+        }
+
+        .menu-list li:nth-child(1) { --dab: #1c2a6b; }
+        .menu-list li:nth-child(2) { --dab: var(--lime); }
+        .menu-list li:nth-child(3) { --dab: var(--pink); }
+        .menu-list li:nth-child(4) { --dab: var(--sky); }
+        .menu-list li:nth-child(5) { --dab: var(--violet); }
+        .menu-list li:nth-child(6) { --dab: #f6c9dc; }
+
         .menu-list h3 {
             font-size: 1.75rem;
             line-height: 1.1;
@@ -363,11 +461,20 @@
 
         /* Evenings */
         .evenings {
+            position: relative;
             background: var(--teal);
             color: #e7f0f2;
         }
 
         .evenings .section-title { color: #fff; }
+
+        .evenings-paint {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            --paint-h: clamp(22px, 3vw, 36px);
+        }
 
         .evenings-grid {
             display: grid;
@@ -584,6 +691,14 @@
             .sheen { transform: none; }
         }
 
+        @media (prefers-reduced-motion: no-preference) {
+            .js .section-title::after {
+                clip-path: inset(0 100% 0 0);
+                transition: clip-path 0.9s cubic-bezier(0.65, 0, 0.35, 1) 0.15s;
+            }
+            .js .section-title.is-painted::after { clip-path: inset(0 0 0 0); }
+        }
+
         @keyframes pour {
             from { clip-path: inset(0 100% 0 0); }
             to { clip-path: inset(0 0 0 0); }
@@ -618,11 +733,12 @@
 
             .site-nav {
                 position: absolute;
-                top: 100%;
+                top: calc(100% + 12px);
                 left: 0;
                 right: 0;
                 background: var(--paper);
-                border-bottom: 1px solid var(--rule);
+                border-radius: 22px;
+                box-shadow: 0 24px 48px -20px rgba(10, 77, 102, 0.45);
                 display: none;
             }
 
@@ -632,34 +748,40 @@
                 flex-direction: column;
                 align-items: stretch;
                 gap: 0;
-                padding: 0.5rem var(--gutter) 1.25rem;
+                padding: 0.75rem 1.25rem 1.25rem;
             }
 
             .nav-list a {
                 display: block;
-                padding: 0.9rem 0;
+                padding: 0.8rem 0;
                 font-family: var(--display);
-                font-size: 1.6rem;
+                font-size: 1.7rem;
                 font-weight: 400;
                 color: var(--teal);
-                background: none;
                 border-bottom: 1px solid var(--rule);
+            }
+
+            .nav-list a::after {
+                left: -0.15em;
+                right: auto;
+                width: 4.2em;
+                bottom: 0.95rem;
+                height: 0.5em;
             }
 
             .nav-list .nav-order {
                 margin-top: 1.25rem;
                 padding: 0.9rem 1.25rem;
                 border-bottom: 0;
-                background: var(--teal);
-                color: #fff;
                 font-family: var(--text);
                 font-size: 1.05rem;
                 font-weight: 600;
+                color: #fff;
                 text-align: center;
             }
 
-            .site-header .wrap { height: 72px; }
-            .brand img { width: 118px; }
+            .nav-shell { height: 66px; padding: 0 8px 0 16px; border-radius: 18px; }
+            .brand img { width: 104px; }
 
             .menu-list li {
                 grid-template-columns: minmax(0, 1fr);
@@ -672,6 +794,10 @@
     <div class="sheen" aria-hidden="true"></div>
     <!-- Brush-edge filter for the painted band -->
     <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+        <filter id="brush-h" x="-10%" y="-60%" width="120%" height="220%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.05 0.012" numOctaves="2" seed="3" />
+            <feDisplacementMap in="SourceGraphic" scale="9" />
+        </filter>
         <filter id="brush" x="-5%" y="-20%" width="110%" height="140%">
             <feTurbulence type="fractalNoise" baseFrequency="0.01 0.05" numOctaves="2" seed="7" />
             <feDisplacementMap in="SourceGraphic" scale="12" />
@@ -680,6 +806,7 @@
 
     <header class="site-header">
         <div class="wrap">
+            <div class="nav-shell">
             <a class="brand" href="#top" aria-label="The Rich Pour, back to top">
                 <picture>
                     <source srcset="images/logo.webp" type="image/webp">
@@ -698,6 +825,7 @@
                     <li><a class="nav-order" href="https://www.doordash.com/store/the-rich-pour-bites-&amp;-beverage-house-massapequa-park-39579205/" target="_blank" rel="noopener">Order on DoorDash</a></li>
                 </ul>
             </nav>
+            </div>
         </div>
     </header>
 
@@ -781,6 +909,7 @@
         </section>
 
         <section class="section evenings" id="parties">
+            <div class="paint evenings-paint" aria-hidden="true"></div>
             <div class="wrap evenings-grid">
                 <div class="evenings-intro">
                     <h2 class="section-title">Host your private party at The Rich Pour</h2>
@@ -878,6 +1007,19 @@
     </footer>
 
     <script>
+        document.documentElement.classList.replace('no-js', 'js');
+
+        // Paint each section title's swash as it scrolls into view
+        const swashObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-painted');
+                    swashObserver.unobserve(entry.target);
+                }
+            });
+        }, { rootMargin: '0px 0px -15% 0px' });
+        document.querySelectorAll('.section-title').forEach(title => swashObserver.observe(title));
+
         // Mobile navigation
         const toggle = document.querySelector('.nav-toggle');
         const nav = document.getElementById('site-nav');
@@ -892,7 +1034,18 @@
         nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setNav(false)));
         document.addEventListener('keydown', e => { if (e.key === 'Escape') setNav(false); });
 
-        // Header rule once the page scrolls
+        // Highlight the nav link for the section in the middle of the screen
+        const navLinks = [...nav.querySelectorAll('a[href^="#"]')];
+        const spy = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                const id = entry.target.id;
+                navLinks.forEach(a => a.classList.toggle('is-current', id && a.getAttribute('href') === `#${id}`));
+            });
+        }, { rootMargin: '-50% 0px -50% 0px' });
+        document.querySelectorAll('main > section').forEach(section => spy.observe(section));
+
+        // Stronger shadow once the page scrolls
         const header = document.querySelector('.site-header');
         const onScroll = () => header.classList.toggle('is-scrolled', window.scrollY > 8);
         window.addEventListener('scroll', onScroll, { passive: true });
