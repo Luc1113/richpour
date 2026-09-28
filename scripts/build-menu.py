@@ -197,7 +197,7 @@ def main():
         <section class="menu-hero">
             <div class="wrap">
                 <h1 class="section-title">Menu</h1>
-                <p class="menu-intro">{count} things we pour and plate, from signature lattes to croffles.</p>
+                <p class="menu-intro">Everything we pour and plate, from signature lattes to croffles.</p>
                 <div class="actions">
                     <a class="btn btn-solid" href="{DOORDASH}" target="_blank" rel="noopener">Order on DoorDash</a>
                 </div>

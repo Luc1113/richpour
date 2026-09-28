@@ -193,6 +193,25 @@ h1, h2, h3 {
 .nav-list li:nth-child(3) a { --swash: #9cc4ec; }
 .nav-list li:nth-child(4) a { --swash: #c3aaf0; }
 
+.nav-list .nav-insta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: var(--teal);
+    transition: color 0.2s, transform 0.2s;
+}
+
+.nav-list .nav-insta::after { content: none; }
+.nav-list .nav-insta:hover { color: #e1306c; transform: rotate(-8deg); }
+.nav-insta-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+}
+
 .nav-list .nav-order {
     padding: 0.7rem 1.25rem;
     border-radius: 999px;
@@ -819,6 +838,10 @@ main > section { scroll-margin-top: 96px; }
         bottom: 0.95rem;
         height: 0.5em;
     }
+
+    .nav-list .nav-insta { display: flex; }
+    .nav-list .nav-insta:hover { transform: none; }
+    .nav-insta-label { position: static; width: auto; height: auto; overflow: visible; clip: auto; }
 
     .nav-list .nav-order {
         margin-top: 1.25rem;
