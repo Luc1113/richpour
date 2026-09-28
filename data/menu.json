@@ -1,0 +1,586 @@
+{
+  "source": "https://www.doordash.com/store/the-rich-pour-bites-&-beverage-house-massapequa-park-39579205/",
+  "fetched": "2026-09-28",
+  "sections": [
+    {
+      "name": "Bagged Coffee Beans",
+      "items": [
+        {
+          "name": "Rich Pour House Brew",
+          "description": "Whole beans or freshly ground. Classic roast with full-bodied flavor. Perfect for drip coffee makers. Ideal for any coffee enthusiast.",
+          "price": "$18.00",
+          "popular": false
+        },
+        {
+          "name": "Rich Pour Coconut Infused Beans",
+          "description": "Coconut aroma infused in your choice of whole beans or freshly ground.",
+          "price": "$18.00",
+          "popular": false
+        }
+      ]
+    },
+    {
+      "name": "Espresso Bar",
+      "items": [
+        {
+          "name": "Shaken Espresso",
+          "description": "Cold-shaken, impeccably smooth.",
+          "price": "$7.50",
+          "popular": false
+        },
+        {
+          "name": "Caramel Macchiato",
+          "description": "Silky milk, espresso & golden caramel.",
+          "price": "$6.95",
+          "popular": false
+        },
+        {
+          "name": "Flat White",
+          "description": "Silky milk, bold espresso.",
+          "price": "$6.75",
+          "popular": false
+        },
+        {
+          "name": "Spanish Latte",
+          "description": "Creamy espresso with sweetened milk.",
+          "price": "$6.50",
+          "popular": false
+        },
+        {
+          "name": "Americano",
+          "description": "Espresso softened with hot water.",
+          "price": "$5.25",
+          "popular": false
+        },
+        {
+          "name": "Plain Latte",
+          "description": "Espresso with steamed milk.",
+          "price": "$6.75",
+          "popular": false
+        },
+        {
+          "name": "Hot Cappuccino",
+          "description": "Bold espresso, thick, airy foam.",
+          "price": "$6.75",
+          "popular": false
+        },
+        {
+          "name": "Mocha Latte",
+          "description": "Chocolate-kissed espresso & milk.",
+          "price": "$6.95",
+          "popular": false
+        },
+        {
+          "name": "Doppio",
+          "description": "Double shot, velvety & bold.",
+          "price": "$4.00",
+          "popular": false
+        },
+        {
+          "name": "Espresso",
+          "description": "Bold, rich single shot.",
+          "price": "$3.25",
+          "popular": false
+        }
+      ]
+    },
+    {
+      "name": "Coffee Counter",
+      "items": [
+        {
+          "name": "Vietnamese Coffee",
+          "description": "Cold brew, sweetened milk.",
+          "price": "$6.25",
+          "popular": false
+        },
+        {
+          "name": "Protein Pour",
+          "description": "Cold brew, protein powder & sweet cream, blended with ice. Add banana or peanut butter.",
+          "price": "$9.75",
+          "popular": false
+        },
+        {
+          "name": "Small Batch Cold Brew",
+          "description": "Smooth, slow-steeped.",
+          "price": "$5.75",
+          "popular": false
+        },
+        {
+          "name": "Small Batch House Brew",
+          "description": "Regular, decaf, special.",
+          "price": "$4.25",
+          "popular": false
+        }
+      ]
+    },
+    {
+      "name": "The Cloud Bar (Cold Foam)",
+      "items": [
+        {
+          "name": "Cold Brew + Cold Foam",
+          "description": "Rich coffee blend with a smooth, bold flavor.",
+          "price": "$6.75",
+          "popular": false
+        },
+        {
+          "name": "Chai + Cold Foam",
+          "description": "Spiced tea with a blend of black tea, cinnamon, cardamom, and ginger.",
+          "price": "$7.50",
+          "popular": false
+        },
+        {
+          "name": "Refresher + Cold Foam",
+          "description": "A mix of seasonal flavors, a refreshing base, and a splash of citrus essence.",
+          "price": "$7.25",
+          "popular": false
+        },
+        {
+          "name": "Hot Chocolate + Cold Foam",
+          "description": "Rich hot chocolate topped with a customizable cloud of cold foam. Choose milk from various options and your preferred size. Tailor with or without a cold foam topping.",
+          "price": "$4.75",
+          "popular": false
+        },
+        {
+          "name": "Iced Matcha + Cold Foam",
+          "description": "Rich matcha green tea mixed with milk.",
+          "price": "$7.75",
+          "popular": true
+        },
+        {
+          "name": "Iced Latte + Cold Foam",
+          "description": "Smooth espresso blended with milk over ice.",
+          "price": "$7.75",
+          "popular": false
+        }
+      ]
+    },
+    {
+      "name": "Summer Lattes",
+      "items": [
+        {
+          "name": "Birthday Suit Latte",
+          "description": "The Rich Pour turns 1!!! Brown sugar, vanilla, espresso, milk, cupcake foam & sprinkles",
+          "price": "$7.75",
+          "popular": true,
+          "photo": "images/menu/birthday-suit-latte.jpg"
+        },
+        {
+          "name": "Monkey Business",
+          "description": "Banana, dark chocolate, espresso, milk, banana coconut foam + chocolate drizzle & dried banana",
+          "price": "$7.75",
+          "popular": true,
+          "photo": "images/menu/monkey-business.jpg"
+        },
+        {
+          "name": "Ocean Drift",
+          "description": "Blue curacao, coconut, vanilla, espresso, milk + whipped cream & coconut",
+          "price": "$7.75",
+          "popular": false,
+          "photo": "images/menu/ocean-drift.jpg"
+        },
+        {
+          "name": "Purple Tide",
+          "description": "White chocolate, espresso, milk, blackberry sage sweet foam",
+          "price": "$7.75",
+          "popular": true,
+          "photo": "images/menu/purple-tide.jpg"
+        },
+        {
+          "name": "Pineapple Palms",
+          "description": "Pineapple, vanilla, espresso, coconut milk, coconut foam & topped with coconut flakes",
+          "price": "$7.75",
+          "popular": false,
+          "photo": "images/menu/pineapple-palms.jpg"
+        },
+        {
+          "name": "Summer Nights",
+          "description": "Sweet milk, dark chocolate, espresso, milk, toasted marshmallow foam + oreos & marshmallows",
+          "price": "$7.75",
+          "popular": true,
+          "photo": "images/menu/summer-nights.jpg"
+        }
+      ]
+    },
+    {
+      "name": "Summer Matchas",
+      "items": [
+        {
+          "name": "Mango Sun Matcha",
+          "description": "White chocolate, matcha, milk, sweet mango foam",
+          "price": "$7.75",
+          "popular": false,
+          "photo": "images/menu/mango-sun-matcha.jpg"
+        },
+        {
+          "name": "White Coral Matcha",
+          "description": "White chocolate, matcha, milk, creamy prickly pear foam",
+          "price": "$7.75",
+          "popular": false,
+          "photo": "images/menu/white-coral-matcha.jpg"
+        },
+        {
+          "name": "Coconut Coastline Matcha",
+          "description": "Coconut, matcha, milk, creamy coconut vanilla foam",
+          "price": "$7.75",
+          "popular": false,
+          "photo": "images/menu/coconut-coastline-matcha.jpg"
+        },
+        {
+          "name": "Guava Glow Matcha",
+          "description": "Honey, matcha, milk, pink guava sweet cream foam",
+          "price": "$7.75",
+          "popular": false
+        }
+      ]
+    },
+    {
+      "name": "Rich Pour Favorite Lattes",
+      "items": [
+        {
+          "name": "Maple Morning",
+          "description": "Espresso, maple syrup, a hint of vanilla, milk & cinnamon sugar foam.",
+          "price": "$7.75",
+          "popular": true
+        },
+        {
+          "name": "Coconut Cloud",
+          "description": "Vanilla, coconut, espresso, milk & vanilla coconut foam topped with toasted coconut.",
+          "price": "$7.75",
+          "popular": true,
+          "photo": "images/menu/coconut-cloud.jpg"
+        },
+        {
+          "name": "Banana Dream",
+          "description": "Banana, vanilla, coconut, espresso, milk, cinnamon, maple white chocolate foam topped with crushed graham crackers.",
+          "price": "$7.75",
+          "popular": true,
+          "photo": "images/menu/banana-dream.jpg"
+        }
+      ]
+    },
+    {
+      "name": "The Tiki Bar: Refreshers",
+      "items": [
+        {
+          "name": "Pina Colada",
+          "description": "Pineapple vanilla coconut soda water coconut milk",
+          "price": "$6.50",
+          "popular": false,
+          "photo": "images/menu/pina-colada.jpg"
+        },
+        {
+          "name": "Prickly Pear",
+          "description": "Prickly Pear Ginger Beer Soda Water",
+          "price": "$6.50",
+          "popular": false,
+          "photo": "images/menu/prickly-pear.jpg"
+        },
+        {
+          "name": "Huckleberry Lychee",
+          "description": "Huckleberry Lychee Soda Water",
+          "price": "$6.50",
+          "popular": false,
+          "photo": "images/menu/huckleberry-lychee.jpg"
+        },
+        {
+          "name": "Ocean Breeze",
+          "description": "Green Apple Blue Razz Sparkling Lemonade",
+          "price": "$6.50",
+          "popular": false,
+          "photo": "images/menu/ocean-breeze.jpg"
+        },
+        {
+          "name": "Wild Berry Palmer",
+          "description": "Raspberry, Pomegranate, Wild Berry Hibiscus Tea, Lemonade",
+          "price": "$6.50",
+          "popular": false,
+          "photo": "images/menu/wild-berry-palmer.jpg"
+        },
+        {
+          "name": "Watermelon Lemonade",
+          "description": "Watermelon lemonade soda water",
+          "price": "$6.50",
+          "popular": false,
+          "photo": "images/menu/watermelon-lemonade.jpg"
+        },
+        {
+          "name": "Strawberry Peach Bellini",
+          "description": "Strawberry, peach, soda water",
+          "price": "$6.50",
+          "popular": false,
+          "photo": "images/menu/strawberry-peach-bellini.jpg"
+        },
+        {
+          "name": "Vanilla Lime Soda",
+          "description": "Vanilla, blue curacao, lime splash, soda water",
+          "price": "$6.50",
+          "popular": false,
+          "photo": "images/menu/vanilla-lime-soda.jpg"
+        },
+        {
+          "name": "Arnold Palmer",
+          "description": "Black tea & lemonade",
+          "price": "$6.50",
+          "popular": false,
+          "photo": "images/menu/arnold-palmer.jpg"
+        },
+        {
+          "name": "Cloud 9",
+          "description": "Cotton candy elixir & lemonade.",
+          "price": "$6.50",
+          "popular": false,
+          "photo": "images/menu/cloud-9.jpg"
+        },
+        {
+          "name": "Electric Lemon",
+          "description": "Butterfly pea flower tea & lemonade.",
+          "price": "$6.50",
+          "popular": false,
+          "photo": "images/menu/electric-lemon.jpg"
+        }
+      ]
+    },
+    {
+      "name": "Dirty Sodas",
+      "items": [
+        {
+          "name": "Jolly Rancher",
+          "description": "Watermelon, blue razz, green apple, sprite & cream",
+          "price": "$6.50",
+          "popular": false,
+          "photo": "images/menu/jolly-rancher.jpg"
+        },
+        {
+          "name": "Pink Starburst",
+          "description": "Pineapple, watermelon, raspberry, sprite & cream",
+          "price": "$6.50",
+          "popular": false,
+          "photo": "images/menu/pink-starburst.jpg"
+        },
+        {
+          "name": "Coco-Cola Fizz",
+          "description": "Coconut, vanilla, coca-cola & cream",
+          "price": "$6.50",
+          "popular": false
+        },
+        {
+          "name": "The Heartbreaker",
+          "description": "Dr pepper, pomegranate, vanilla & half-and-half.",
+          "price": "$6.50",
+          "popular": false,
+          "photo": "images/menu/the-heartbreaker.jpg"
+        },
+        {
+          "name": "Cotton Candy Crush",
+          "description": "Sprite, cotton candy, fresh lime & cotton candy cold foam.",
+          "price": "$6.50",
+          "popular": false,
+          "photo": "images/menu/cotton-candy-crush.jpg"
+        }
+      ]
+    },
+    {
+      "name": "Croffles",
+      "items": [
+        {
+          "name": "Bacon Me Crazy",
+          "description": "Loaded eggs, bacon, cheddar & maple drizzle.",
+          "price": "$15.25",
+          "popular": true,
+          "photo": "images/menu/bacon-me-crazy.jpg"
+        },
+        {
+          "name": "Sweet Whip",
+          "description": "Whipped honey ricotta, berries, almonds & honey drizzle.",
+          "price": "$12.25",
+          "popular": false
+        },
+        {
+          "name": "Mini Dippers",
+          "description": "3 mini croffles served with your choice of: vanilla frosting, Nutella or powdered sugar.",
+          "price": "$9.25",
+          "popular": false
+        },
+        {
+          "name": "Not So S'more-Dinary",
+          "description": "Chocolate chips, fluff, graham, toasted marshmallow & chocolate drizzle.",
+          "price": "$12.25",
+          "popular": false,
+          "photo": "images/menu/not-so-s-more-dinary.jpg"
+        },
+        {
+          "name": "Haute Mess",
+          "description": "Nutella, cookie butter, caramel & torched banana.",
+          "price": "$12.25",
+          "popular": false
+        }
+      ]
+    },
+    {
+      "name": "The Croffle Lab",
+      "items": [
+        {
+          "name": "Build Your Own",
+          "description": "Croffles with a choice of spreads, drizzles, and toppings. Various spreads like Nutella, Butter. Drizzles include syrups like Caramel, Chocolate. Toppings include Cinnamon Sugar, Powdered Sugar.",
+          "price": "$12.25",
+          "popular": false
+        }
+      ]
+    },
+    {
+      "name": "Pressed Paninis",
+      "items": [
+        {
+          "name": "Chick Magnet Panini",
+          "description": "Grilled chicken, lettuce, tomato, fresh mozzarella & balsamic glaze.",
+          "price": "$15.25",
+          "popular": false
+        },
+        {
+          "name": "Pesto Perfect Panini",
+          "description": "Grilled chicken, lettuce, creamy burrata, pesto.",
+          "price": "$15.25",
+          "popular": true
+        },
+        {
+          "name": "Golden Buffalo Panini",
+          "description": "Buffalo fried chicken, ranch, romaine, sharp cheddar.",
+          "price": "$15.25",
+          "popular": false
+        },
+        {
+          "name": "Breadwinner Panini",
+          "description": "Fried eggplant, creamy burrata, roasted peppers served with a side of hot honey.",
+          "price": "$15.25",
+          "popular": false,
+          "photo": "images/menu/breadwinner-panini.jpg"
+        },
+        {
+          "name": "Melt Down Panini",
+          "description": "Munster, mozzarella & tomatoes pressed to gooey goodness. Add bacon for an additional charge.",
+          "price": "$13.25",
+          "popular": false
+        }
+      ]
+    },
+    {
+      "name": "Mini Melts",
+      "items": [
+        {
+          "name": "Avo Nice Day",
+          "description": "Eggs, black beans, cheddar, avocado, salt & pepper.",
+          "price": "$14.95",
+          "popular": false,
+          "photo": "images/menu/avo-nice-day.jpg"
+        },
+        {
+          "name": "The Roost",
+          "description": "Grilled chicken & cheddar.",
+          "price": "$14.25",
+          "popular": false
+        },
+        {
+          "name": "Morning Melt",
+          "description": "Egg & cheddar.",
+          "price": "$12.75",
+          "popular": false
+        },
+        {
+          "name": "Classic Cheese",
+          "description": "Cheddar.",
+          "price": "$10.95",
+          "popular": false
+        }
+      ]
+    },
+    {
+      "name": "Avocado Toast",
+      "items": [
+        {
+          "name": "The Hamptons",
+          "description": "Sourdough, creamy brie, fig jam, arugula, prosciutto & balsamic glaze",
+          "price": "$14.25",
+          "popular": true
+        },
+        {
+          "name": "Sunset",
+          "description": "Sourdough with smashed avocado, fresh mozzarella, tomato & balsamic glaze.",
+          "price": "$13.25",
+          "popular": false,
+          "photo": "images/menu/sunset.jpg"
+        },
+        {
+          "name": "Smooth Operator",
+          "description": "Sourdough + avocado, everything bagel seasoning & hot honey",
+          "price": "$9.25",
+          "popular": false
+        },
+        {
+          "name": "Almafi Coast",
+          "description": "Sourdough with pesto, Parmesan, prosciutto, arugula, honey & sea salt",
+          "price": "$14.25",
+          "popular": false
+        },
+        {
+          "name": "Sunburn",
+          "description": "Sourdough with smashed avocado, whipped honey ricotta, chili flakes & hot honey.",
+          "price": "$12.25",
+          "popular": true,
+          "photo": "images/menu/sunburn.jpg"
+        },
+        {
+          "name": "Sunrise",
+          "description": "Sourdough with smashed avocado, eggs, bacon bits, everything seasoning & sriracha.",
+          "price": "$13.25",
+          "popular": false
+        }
+      ]
+    },
+    {
+      "name": "The Kiddo Cafe - Yummy Munchies",
+      "items": [
+        {
+          "name": "Banana-Tella Dilla",
+          "description": "2 warm mini tortillas filled with Nutella & fresh banana slices.",
+          "price": "$9.95",
+          "popular": false
+        },
+        {
+          "name": "Mini Croffle BEC",
+          "description": "Mini croffle topped with bacon, egg & cheddar",
+          "price": "$10.25",
+          "popular": false
+        },
+        {
+          "name": "Hashbrown Twins",
+          "description": "Crispy hashbrown patties, typically paired with a side of ketchup, offering a classic, kid-friendly snack.",
+          "price": "$4.75",
+          "popular": false
+        },
+        {
+          "name": "Oh La La Lil' Toast",
+          "description": "A kid-size slice of fluffy french toast, gently sweetened and served with syrup.",
+          "price": "$6.95",
+          "popular": false
+        },
+        {
+          "name": "Scrambled Eggs Side",
+          "description": "Scrambled eggs typically served with cheddar cheese and breakfast potatoes.",
+          "price": "$5.25",
+          "popular": false
+        }
+      ]
+    },
+    {
+      "name": "The Kiddo Cafe - Happy Sips",
+      "items": [
+        {
+          "name": "Cool Babyccino",
+          "description": "Frothed milk topped with chocolate chip cookies & sprinkles.",
+          "price": "$4.50",
+          "popular": false
+        }
+      ]
+    }
+  ]
+}
