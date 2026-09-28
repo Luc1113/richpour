@@ -1,0 +1,26 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "clipped-overflow-container",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-09-28T12:38:26.707Z",
+        "reason": "Claude: .paint::after is a decorative texture layer intentionally clipped to the painted band; no popovers/menus inside"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-09-28T12:40:50.506Z",
+        "reason": "Claude: flagged .menu/.evenings sections get 4.5–8.5rem vertical padding from .section and a clamp gutter from .wrap; verified in rendered screenshots at 1440px and 390px"
+      }
+    ]
+  }
+}
