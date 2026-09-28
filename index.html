@@ -3,715 +3,924 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Rich Pour | Bites & Beverages | New York Cafe</title>
+    <title>The Rich Pour | Bites &amp; Beverage House | Massapequa Park, NY</title>
+    <meta name="description" content="The Rich Pour is a bites and beverage house in Massapequa Park, NY, serving coffee, matcha, lemonades and small plates, and hosting private parties and events.">
+    <meta property="og:title" content="The Rich Pour | Bites &amp; Beverage House">
+    <meta property="og:description" content="Coffee, matcha and small plates in a room full of color. Massapequa Park, NY.">
+    <meta property="og:image" content="https://www.therichpourny.com/images/matcha.jpg">
+    <meta name="theme-color" content="#0a4d66">
+    <link rel="icon" href="images/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gloock&family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        :root {
+            /* Brand, sampled from the logo and the café wall */
+            --paper: #f8f8f5;
+            --ink: #14232b;
+            --teal: #0a4d66;
+            --teal-deep: #083a4d;
+            --pink: #e8428f;
+            --lime: #d4e84a;
+            --violet: #7d4fc8;
+            --sky: #86b8e6;
+            --muted: #51606a;
+            --rule: rgba(20, 35, 43, 0.14);
+
+            --spin: 0deg;
+
+            --display: 'Gloock', 'Didot', 'Bodoni 72', Georgia, serif;
+            --text: 'Schibsted Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+            --gutter: clamp(1rem, 4vw, 3.5rem);
+            --max: 1280px;
         }
 
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        html { scroll-behavior: smooth; }
+
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--paper);
+            color: var(--ink);
+            font-family: var(--text);
+            font-size: 1.0625rem;
             line-height: 1.6;
-            color: #1a1a1a;
+            -webkit-font-smoothing: antialiased;
             overflow-x: hidden;
         }
 
-        /* Navigation */
-        nav {
+        /* Iridescent sheen: the logo's paint colors, blurred into a pearl-like wash that turns as you scroll */
+        .sheen {
             position: fixed;
+            inset: -35vmax;
+            z-index: -1;
+            pointer-events: none;
+            background:
+                radial-gradient(closest-side at 30% 35%, rgba(232, 66, 143, 0.55), transparent),
+                radial-gradient(closest-side at 70% 30%, rgba(134, 184, 230, 0.6), transparent),
+                radial-gradient(closest-side at 65% 72%, rgba(212, 232, 74, 0.55), transparent),
+                radial-gradient(closest-side at 30% 70%, rgba(125, 79, 200, 0.45), transparent),
+                conic-gradient(from 0deg, #f6c9dc, #e1ecf8, #eef5c4, #e6dcf7, #f6c9dc);
+            opacity: 0.32;
+            filter: blur(70px) saturate(1.2);
+            transform: rotate(var(--spin));
+            will-change: transform;
+        }
+
+        img { display: block; max-width: 100%; height: auto; }
+
+        a { color: inherit; }
+
+        :focus-visible {
+            outline: 3px solid var(--pink);
+            outline-offset: 3px;
+        }
+
+        .wrap {
             width: 100%;
-            background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(10px);
-            padding: 1.5rem 5%;
-            z-index: 1000;
+            max-width: var(--max);
+            margin: 0 auto;
+            padding: 0 var(--gutter);
+        }
+
+        h1, h2, h3 {
+            font-family: var(--display);
+            font-weight: 400;
+            line-height: 1.02;
+            letter-spacing: -0.01em;
+            color: var(--teal);
+        }
+
+        /* ---------- Painted band: the one loud thing ---------- */
+        .paint {
+            position: relative;
+            height: var(--paint-h, 88px);
+            overflow: hidden;
+            background:
+                linear-gradient(97deg,
+                    #1c2a6b 0 4%, #e8428f 4% 9%, #f6c9dc 9% 11%, #d4e84a 11% 14%,
+                    #86b8e6 14% 19%, #111a3a 19% 21%, #e8428f 21% 27%, #fff 27% 28%,
+                    #7d4fc8 28% 33%, #c9a24b 33% 34.5%, #86b8e6 34.5% 38%, #e8428f 38% 41%,
+                    #1c2a6b 41% 46%, #d4e84a 46% 48%, #f6c9dc 48% 53%, #0a4d66 53% 56%,
+                    #e8428f 56% 62%, #111a3a 62% 63.5%, #86b8e6 63.5% 68%, #d4e84a 68% 70%,
+                    #7d4fc8 70% 75%, #fff 75% 76%, #e8428f 76% 81%, #c9a24b 81% 82%,
+                    #1c2a6b 82% 87%, #f6c9dc 87% 90%, #86b8e6 90% 94%, #e8428f 94% 100%);
+            filter: url(#brush);
+        }
+
+        .paint::after {
+            /* soft streaks running through the strokes */
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: repeating-linear-gradient(97deg,
+                rgba(255,255,255,0.18) 0 2px, transparent 2px 11px,
+                rgba(0,0,0,0.08) 11px 12px, transparent 12px 23px);
+            mix-blend-mode: soft-light;
+        }
+
+        /* ---------- Header ---------- */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: color-mix(in srgb, var(--paper) 70%, transparent);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s;
+        }
+
+        .site-header.is-scrolled { border-bottom-color: var(--rule); }
+
+        .site-header .wrap {
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
+            justify-content: space-between;
+            gap: 1.5rem;
+            height: 84px;
         }
 
-        nav.scrolled {
-            padding: 1rem 5%;
-            box-shadow: 0 2px 30px rgba(0, 0, 0, 0.1);
-        }
+        .brand img { width: 142px; }
 
-        .logo {
-            font-size: 1.6rem;
-            color: #c9a961;
-            font-weight: 700;
-            letter-spacing: 3px;
-        }
-
-        .nav-links {
+        .nav-list {
             display: flex;
-            gap: 2.5rem;
+            gap: 2rem;
+            align-items: center;
             list-style: none;
         }
 
-        .nav-links a {
-            color: #333;
+        .nav-list a {
             text-decoration: none;
-            font-size: 0.9rem;
             font-weight: 500;
-            letter-spacing: 1px;
-            transition: color 0.3s;
-            text-transform: uppercase;
+            font-size: 0.975rem;
+            color: var(--ink);
+            padding: 0.25rem 0;
+            background: linear-gradient(var(--pink), var(--pink)) left bottom / 0 2px no-repeat;
+            transition: background-size 0.25s;
         }
 
-        .nav-links a:hover {
-            color: #c9a961;
+        .nav-list a:hover { background-size: 100% 2px; }
+
+        .nav-list .nav-order {
+            padding: 0.55rem 1.1rem;
+            border-radius: 999px;
+            background: var(--teal);
+            color: #fff;
+            font-weight: 600;
+            transition: background-color 0.2s;
         }
 
-        /* Hamburger Menu */
-        .hamburger {
+        .nav-list .nav-order:hover { background: var(--teal-deep); }
+
+        .nav-toggle {
             display: none;
-            flex-direction: column;
+            width: 44px;
+            height: 44px;
+            border: 0;
+            background: none;
             cursor: pointer;
-            gap: 5px;
-        }
-
-        .hamburger span {
-            width: 28px;
-            height: 2.5px;
-            background: #c9a961;
-            transition: all 0.3s;
-            border-radius: 2px;
-        }
-
-        .hamburger.active span:nth-child(1) {
-            transform: rotate(45deg) translate(6px, 6px);
-        }
-
-        .hamburger.active span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .hamburger.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(6px, -6px);
-        }
-
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            background: linear-gradient(135deg, #1a2f3a 0%, #0d1d26 100%);
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: #fff;
-            padding: 8rem 5% 4rem;
             position: relative;
         }
 
-        .hero::before {
-            content: '';
+        .nav-toggle span {
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 50% 50%, rgba(201, 169, 97, 0.1) 0%, transparent 70%);
+            left: 10px;
+            right: 10px;
+            height: 2px;
+            background: var(--teal);
+            transition: transform 0.25s, opacity 0.2s;
         }
 
-        .hero-content {
-            position: relative;
-            z-index: 1;
+        .nav-toggle span:nth-child(1) { top: 15px; }
+        .nav-toggle span:nth-child(2) { top: 21px; }
+        .nav-toggle span:nth-child(3) { top: 27px; }
+
+        .nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+        .nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+        .nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+        /* ---------- Hero ---------- */
+        .hero .wrap {
+            display: grid;
+            grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+            gap: clamp(2rem, 5vw, 5rem);
+            align-items: end;
+            padding-top: clamp(2.5rem, 6vw, 5rem);
+            padding-bottom: clamp(2.5rem, 5vw, 4rem);
         }
 
-        .hero-content h1 {
-            font-size: 4rem;
-            color: #c9a961;
-            margin-bottom: 1rem;
-            letter-spacing: 4px;
-            font-weight: 300;
-            animation: fadeInUp 1s ease;
+        .hero h1 {
+            font-size: clamp(2.7rem, 6.4vw, 5.6rem);
+            line-height: 0.96;
+            letter-spacing: -0.025em;
+            max-width: 11ch;
         }
 
-        .hero-content img {
-            max-width: 550px;
-            width: 90%;
-            height: auto;
-            margin: 0 auto 2.5rem;
-            display: block;
-            filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3));
-        }
-
-        .hero-content p {
+        .hero-lede {
+            margin-top: 1.75rem;
+            max-width: 34rem;
             font-size: 1.2rem;
-            margin-bottom: 2.5rem;
-            letter-spacing: 2px;
-            font-weight: 300;
-            color: rgba(255, 255, 255, 0.9);
-            animation: fadeInUp 1s ease 0.3s backwards;
+            color: var(--muted);
         }
 
-        .cta-button {
+        .today {
+            margin-top: 1.5rem;
+            font-weight: 500;
+            color: var(--ink);
+        }
+
+        .today::before {
+            content: '';
             display: inline-block;
-            padding: 1.1rem 3rem;
-            background: #c9a961;
-            color: #fff;
-            text-decoration: none;
-            font-weight: 600;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            transition: all 0.3s;
-            animation: fadeInUp 1s ease 0.6s backwards;
-            border: 2px solid #c9a961;
-            border-radius: 2px;
+            width: 0.6em;
+            height: 0.6em;
+            margin-right: 0.55em;
+            border-radius: 50%;
+            background: var(--lime);
+            box-shadow: 0 0 0 3px rgba(212, 232, 74, 0.35);
+            vertical-align: 0.05em;
         }
 
-        .cta-button:hover {
-            background: transparent;
-            color: #c9a961;
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(201, 169, 97, 0.3);
-        }
-
-        /* About Section */
-        .about {
-            padding: 7rem 5%;
-            background: #fff;
-            text-align: center;
-        }
-
-        .about h2 {
-            font-size: 2.8rem;
-            color: #1a1a1a;
-            margin-bottom: 1rem;
-            letter-spacing: 2px;
-            font-weight: 300;
-        }
-
-        .section-subtitle {
-            color: #c9a961;
-            font-size: 1rem;
-            letter-spacing: 3px;
-            margin-bottom: 3rem;
-            text-transform: uppercase;
-            font-weight: 500;
-        }
-
-        .about p {
-            max-width: 850px;
-            margin: 0 auto 2rem;
-            font-size: 1.1rem;
-            color: #666;
-            line-height: 1.9;
-            font-weight: 300;
-        }
-
-        /* Menu Section */
-        .menu {
-            padding: 7rem 5%;
-            background: #fafafa;
-            color: #1a1a1a;
-        }
-
-        .menu h2 {
-            font-size: 2.8rem;
-            color: #1a1a1a;
-            text-align: center;
-            margin-bottom: 1rem;
-            letter-spacing: 2px;
-            font-weight: 300;
-        }
-
-        .menu-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-            max-width: 1300px;
-            margin: 0 auto;
-        }
-
-        .menu-item {
-            background: #fff;
-            padding: 2.5rem;
-            border-radius: 4px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-            transition: all 0.3s;
-            border-top: 3px solid #c9a961;
-        }
-
-        .menu-item:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
-        }
-
-        .menu-item h3 {
-            color: #1a1a1a;
-            margin-bottom: 0.8rem;
-            font-size: 1.4rem;
-            font-weight: 600;
-        }
-
-        .menu-item p {
-            color: #777;
-            line-height: 1.7;
-            font-weight: 300;
-        }
-
-        .menu-note {
-            text-align: center;
-            margin-top: 3rem;
-            color: #c9a961;
-            font-size: 1rem;
-            font-weight: 500;
-            letter-spacing: 1px;
-        }
-
-        /* Gallery Section */
-        .gallery {
-            padding: 7rem 5%;
-            background: #fff;
-        }
-
-        .gallery h2 {
-            font-size: 2.8rem;
-            color: #1a1a1a;
-            text-align: center;
-            margin-bottom: 1rem;
-            letter-spacing: 2px;
-            font-weight: 300;
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            max-width: 1300px;
-            margin: 0 auto;
-        }
-
-        .gallery-item {
-            aspect-ratio: 1;
-            background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+        .actions {
             display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 2.25rem;
+        }
+
+        .btn {
+            display: inline-flex;
             align-items: center;
-            justify-content: center;
-            color: #c9a961;
-            font-size: 3rem;
-            transition: all 0.3s;
-            cursor: pointer;
-            border-radius: 4px;
+            min-height: 50px;
+            padding: 0 1.6rem;
+            border-radius: 999px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            border: 2px solid var(--teal);
+            transition: background-color 0.2s, color 0.2s;
+        }
+
+        .btn-solid { background: var(--teal); color: #fff; }
+        .btn-solid:hover { background: var(--teal-deep); border-color: var(--teal-deep); }
+        .btn-line { color: var(--teal); }
+        .btn-line:hover { background: var(--teal); color: #fff; }
+
+        .hero-photo {
+            position: relative;
+            aspect-ratio: 4 / 5;
+            border-radius: 220px 220px 6px 6px;
             overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            background: #d8e3c4;
         }
 
-        .gallery-item:hover {
-            transform: scale(1.03);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-        }
-
-        .gallery-item img {
+        .hero-photo img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            object-position: 50% 62%;
         }
 
-        .gallery-note {
-            text-align: center;
-            margin-top: 3rem;
-            color: #888;
-            font-weight: 300;
+        .hero-paint { --paint-h: clamp(64px, 9vw, 120px); }
+
+        /* ---------- Sections ---------- */
+        .section { padding: clamp(4.5rem, 10vw, 8.5rem) 0; }
+
+        .section-title {
+            font-size: clamp(2.3rem, 5vw, 4rem);
+            max-width: 16ch;
         }
 
-        .gallery-note a {
-            color: #c9a961;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
+        /* About */
+        .about .wrap {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+            gap: clamp(2rem, 6vw, 6rem);
         }
 
-        .gallery-note a:hover {
-            color: #a88b4f;
+        .about-copy p {
+            max-width: 36rem;
+            font-size: 1.125rem;
+            color: var(--muted);
         }
 
-        /* Contact Section */
-        .contact {
-            padding: 7rem 5%;
-            background: #1a2f3a;
-            color: #fff;
-            text-align: center;
+        .about-copy p + p { margin-top: 1.25rem; }
+
+        .about-copy p:first-child {
+            font-size: 1.35rem;
+            line-height: 1.5;
+            color: var(--ink);
         }
 
-        .contact h2 {
-            font-size: 2.8rem;
-            color: #fff;
-            margin-bottom: 1rem;
-            letter-spacing: 2px;
-            font-weight: 300;
-        }
+        /* Menu */
 
-        .contact-info {
-            max-width: 650px;
-            margin: 0 auto;
-        }
-
-        .contact-info p {
-            margin: 1.5rem 0;
-            font-size: 1.1rem;
-            color: rgba(255, 255, 255, 0.8);
-            font-weight: 300;
-        }
-
-        .contact-info strong {
-            color: #c9a961;
-            font-weight: 600;
-        }
-
-        .social-links {
+        .menu-head {
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
+            align-items: end;
             gap: 2rem;
-            margin-top: 3rem;
+            flex-wrap: wrap;
+            margin-bottom: clamp(2.5rem, 5vw, 4rem);
         }
 
-        .social-links a {
-            color: #c9a961;
-            text-decoration: none;
-            font-size: 1.1rem;
-            transition: all 0.3s;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.8rem 1.5rem;
-            border: 1px solid rgba(201, 169, 97, 0.3);
-            border-radius: 30px;
-            background: rgba(201, 169, 97, 0.1);
-            font-weight: 500;
+
+        .menu-body {
+            display: grid;
+            grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+            gap: clamp(2rem, 6vw, 6rem);
+            align-items: start;
         }
 
-        .social-links a:hover {
-            transform: translateY(-2px);
-            background: rgba(201, 169, 97, 0.2);
-            box-shadow: 0 5px 20px rgba(201, 169, 97, 0.3);
+        .feature { position: sticky; top: 110px; }
+
+        .feature img {
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            border-radius: 6px;
+        }
+
+        .menu-list { list-style: none; }
+
+        .menu-list li {
+            display: grid;
+            grid-template-columns: minmax(0, 13rem) minmax(0, 1fr);
+            gap: 1.5rem;
+            padding: 1.6rem 0;
+            border-top: 1px solid var(--rule);
+        }
+
+        .menu-list li:last-child { border-bottom: 1px solid var(--rule); }
+
+        .menu-list h3 {
+            font-size: 1.75rem;
+            line-height: 1.1;
+            color: var(--ink);
+        }
+
+        .menu-list p { color: var(--muted); }
+
+        /* Evenings */
+        .evenings {
+            background: var(--teal);
+            color: #e7f0f2;
+        }
+
+        .evenings .section-title { color: #fff; }
+
+        .evenings-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+            gap: clamp(2rem, 6vw, 6rem);
+        }
+
+        .evenings-intro > p {
+            margin-top: 1.5rem;
+            max-width: 32rem;
+            font-size: 1.2rem;
+            color: #d6e6ea;
+        }
+
+        .party-contact { margin-top: 2.75rem; }
+
+        .party-contact span {
+            display: block;
+            font-weight: 600;
+            color: var(--lime);
+            margin-bottom: 0.35rem;
+        }
+
+        .party-contact a {
+            font-family: var(--display);
+            font-size: clamp(1.5rem, 3.2vw, 2.3rem);
+            line-height: 1.2;
+            color: #fff;
+            text-decoration-color: var(--pink);
+            text-decoration-thickness: 2px;
+            text-underline-offset: 0.18em;
+            overflow-wrap: anywhere;
+        }
+
+        .party-contact a:hover { text-decoration-color: var(--lime); }
+
+        .also {
+            align-self: end;
+            padding-top: 1.75rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.25);
+        }
+
+        .also h3 {
+            font-family: var(--text);
+            font-weight: 600;
+            font-size: 1rem;
+            letter-spacing: 0;
+            color: #c9dde2;
+        }
+
+        .evening-list { list-style: none; margin-top: 0.5rem; }
+
+        .evening-list li { padding: 0.9rem 0; }
+
+        .evening-list h4 {
+            font-family: var(--display);
+            font-weight: 400;
+            font-size: 1.3rem;
+            line-height: 1.2;
+            color: #fff;
+        }
+
+        .evening-list p { max-width: 34rem; font-size: 0.975rem; color: #b9d0d6; }
+
+        .also-note { margin-top: 0.75rem; font-size: 0.975rem; color: #b9d0d6; }
+        .also-note a { color: #fff; text-underline-offset: 0.18em; }
+
+        /* Visit */
+        .visit-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+            gap: clamp(2rem, 6vw, 6rem);
+            margin-top: clamp(2.5rem, 5vw, 4rem);
+        }
+
+        .visit h3 {
+            font-family: var(--text);
+            font-weight: 600;
+            font-size: 1rem;
+            letter-spacing: 0;
+            color: var(--muted);
+            margin-bottom: 0.75rem;
+        }
+
+        .visit-block + .visit-block { margin-top: 2.25rem; }
+
+        .visit-big {
+            font-family: var(--display);
+            font-size: clamp(1.6rem, 3vw, 2.2rem);
+            line-height: 1.2;
+            color: var(--ink);
+        }
+
+        .section.visit { padding-bottom: clamp(3rem, 6vw, 5rem); }
+
+        .map-band { padding-bottom: clamp(3rem, 6vw, 5rem); }
+
+        .map {
+            height: clamp(320px, 38vw, 520px);
+            background: #e4e8e6;
+            border-top: 1px solid var(--rule);
+            border-bottom: 1px solid var(--rule);
+        }
+
+        .map iframe {
+            display: block;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .map-link {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 0.5rem 1.5rem;
+            padding-top: 1.25rem;
+            font-size: 1.125rem;
+        }
+
+        .map-link a {
+            font-weight: 600;
+            color: var(--teal);
+            text-decoration-color: var(--pink);
+            text-decoration-thickness: 2px;
+            text-underline-offset: 0.2em;
+        }
+
+        .map-link a {
+            color: var(--teal);
+            text-decoration-color: var(--pink);
+            text-decoration-thickness: 2px;
+            text-underline-offset: 0.2em;
+        }
+
+        .visit-big a {
+            text-decoration-thickness: 2px;
+            text-underline-offset: 0.18em;
+            text-decoration-color: var(--pink);
+            overflow-wrap: anywhere;
+        }
+
+        .hours {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 1.125rem;
+        }
+
+        .hours th, .hours td {
+            text-align: left;
+            padding: 1rem 0;
+            border-top: 1px solid var(--rule);
+            font-weight: 400;
+        }
+
+        .hours tr:last-child th, .hours tr:last-child td { border-bottom: 1px solid var(--rule); }
+
+        .hours td { text-align: right; font-variant-numeric: tabular-nums; }
+
+        .hours tr.is-today th, .hours tr.is-today td { font-weight: 600; color: var(--teal); }
+
+        .hours tr.is-today th::after {
+            content: 'Today';
+            margin-left: 0.75rem;
+            padding: 0.15rem 0.6rem;
+            border-radius: 999px;
+            background: var(--lime);
+            color: var(--teal-deep);
+            font-size: 0.8rem;
+            font-weight: 600;
+            vertical-align: 0.15em;
         }
 
         /* Footer */
-        footer {
-            background: #0d1d26;
-            color: rgba(255, 255, 255, 0.5);
-            text-align: center;
-            padding: 2.5rem;
-            font-size: 0.9rem;
-            font-weight: 300;
+        .site-footer { --paint-h: 18px; }
+
+        .site-footer .wrap {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            padding-top: 2.5rem;
+            padding-bottom: 2.5rem;
+            color: var(--muted);
+            font-size: 0.95rem;
         }
 
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .site-footer img { width: 120px; }
+
+        .credit a {
+            color: var(--teal);
+            font-weight: 500;
+            text-underline-offset: 0.2em;
+            text-decoration-color: var(--pink);
         }
 
-        /* Mobile Responsive */
-        @media (max-width: 768px) {
-            .hamburger {
-                display: flex;
+        /* ---------- One orchestrated moment: the pour ---------- */
+        @media (prefers-reduced-motion: no-preference) {
+            .hero-paint {
+                animation: pour 1.3s cubic-bezier(0.65, 0, 0.35, 1) 0.2s both;
+            }
+            .hero h1, .hero-lede, .today, .hero .actions, .hero-photo {
+                animation: rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+            }
+            .hero-lede { animation-delay: 0.1s; }
+            .today { animation-delay: 0.18s; }
+            .hero .actions { animation-delay: 0.26s; }
+            .hero-photo { animation-delay: 0.05s; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .sheen { transform: none; }
+        }
+
+        @keyframes pour {
+            from { clip-path: inset(0 100% 0 0); }
+            to { clip-path: inset(0 0 0 0); }
+        }
+
+        @keyframes rise {
+            from { opacity: 0; transform: translateY(18px); }
+            to { opacity: 1; transform: none; }
+        }
+
+        /* ---------- Responsive ---------- */
+        @media (max-width: 900px) {
+            .hero .wrap,
+            .about .wrap,
+            .menu-body,
+            .evenings-grid,
+            .visit-grid {
+                grid-template-columns: minmax(0, 1fr);
             }
 
-            nav {
-                flex-direction: row;
-                padding: 1rem 5%;
-            }
-
-            .nav-links {
-                position: fixed;
-                left: -100%;
-                top: 70px;
-                flex-direction: column;
-                background-color: rgba(255, 255, 255, 0.98);
-                backdrop-filter: blur(10px);
+            .hero-photo {
+                max-width: 440px;
                 width: 100%;
-                text-align: center;
-                transition: left 0.3s;
-                box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-                padding: 2rem 0;
-                gap: 1.5rem;
+                border-radius: 200px 200px 6px 6px;
             }
 
-            .nav-links.active {
-                left: 0;
-            }
-
-            .nav-links a {
-                font-size: 1rem;
-            }
-
-            .hero-content h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero-content p {
-                font-size: 1rem;
-            }
-
-            .hero-content img {
-                max-width: 90%;
-                margin-bottom: 1.5rem;
-            }
-
-            .logo {
-                font-size: 1.4rem;
-            }
-
-            .menu-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .about h2,
-            .menu h2,
-            .gallery h2,
-            .contact h2 {
-                font-size: 2.2rem;
-            }
-
-            .about,
-            .menu,
-            .gallery,
-            .contact {
-                padding: 5rem 5%;
-            }
-
-            .cta-button {
-                padding: 1rem 2.5rem;
-                font-size: 0.85rem;
-            }
-
-            .gallery-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
+            .feature { position: static; max-width: 460px; }
         }
 
-        @media (max-width: 480px) {
-            .hero-content h1 {
-                font-size: 2rem;
+        @media (max-width: 760px) {
+            .nav-toggle { display: block; }
+
+            .site-nav {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--paper);
+                border-bottom: 1px solid var(--rule);
+                display: none;
             }
 
-            .hero-content img {
-                max-width: 95%;
-            }
+            .site-nav.is-open { display: block; }
 
-            .about h2,
-            .menu h2,
-            .gallery h2,
-            .contact h2 {
-                font-size: 1.9rem;
-            }
-
-            .logo {
-                font-size: 1.2rem;
-            }
-
-            .gallery-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .social-links {
+            .nav-list {
                 flex-direction: column;
-                align-items: center;
+                align-items: stretch;
+                gap: 0;
+                padding: 0.5rem var(--gutter) 1.25rem;
+            }
+
+            .nav-list a {
+                display: block;
+                padding: 0.9rem 0;
+                font-family: var(--display);
+                font-size: 1.6rem;
+                font-weight: 400;
+                color: var(--teal);
+                background: none;
+                border-bottom: 1px solid var(--rule);
+            }
+
+            .nav-list .nav-order {
+                margin-top: 1.25rem;
+                padding: 0.9rem 1.25rem;
+                border-bottom: 0;
+                background: var(--teal);
+                color: #fff;
+                font-family: var(--text);
+                font-size: 1.05rem;
+                font-weight: 600;
+                text-align: center;
+            }
+
+            .site-header .wrap { height: 72px; }
+            .brand img { width: 118px; }
+
+            .menu-list li {
+                grid-template-columns: minmax(0, 1fr);
+                gap: 0.4rem;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <div class="logo">THE RICH POUR</div>
-        <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
+    <div class="sheen" aria-hidden="true"></div>
+    <!-- Brush-edge filter for the painted band -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+        <filter id="brush" x="-5%" y="-20%" width="110%" height="140%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.01 0.05" numOctaves="2" seed="7" />
+            <feDisplacementMap in="SourceGraphic" scale="12" />
+        </filter>
+    </svg>
+
+    <header class="site-header">
+        <div class="wrap">
+            <a class="brand" href="#top" aria-label="The Rich Pour, back to top">
+                <picture>
+                    <source srcset="images/logo.webp" type="image/webp">
+                    <img src="images/logo.png" alt="The Rich Pour, Bites &amp; Beverage House" width="963" height="498">
+                </picture>
+            </a>
+            <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="site-nav" id="site-nav" aria-label="Main">
+                <ul class="nav-list">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#parties">Private parties</a></li>
+                    <li><a href="#visit">Visit</a></li>
+                    <li><a class="nav-order" href="https://www.doordash.com/store/the-rich-pour-bites-&amp;-beverage-house-massapequa-park-39579205/" target="_blank" rel="noopener">Order on DoorDash</a></li>
+                </ul>
+            </nav>
         </div>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#specialties">Specialties</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+    </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <img src="richpour.png" alt="The Rich Pour">
-            <a href="#about" class="cta-button">Discover Our Story</a>
+    <main id="top">
+        <section class="hero">
+            <div class="wrap">
+                <div>
+                    <h1>Coffee, matcha and small plates in a room full of color.</h1>
+                    <p class="hero-lede">
+                        The Rich Pour is a bites &amp; beverage house in Massapequa Park, NY.
+                        Stop in for a morning latte, stay for lunch, or book the café for your next party.
+                    </p>
+                    <p class="today" id="today-hours">Open Mon–Fri 7am–7pm, Sat–Sun 8am–8pm</p>
+                    <div class="actions">
+                        <a class="btn btn-solid" href="https://www.doordash.com/store/the-rich-pour-bites-&amp;-beverage-house-massapequa-park-39579205/" target="_blank" rel="noopener">Order on DoorDash</a>
+                        <a class="btn btn-line" href="#menu">See the menu</a>
+                    </div>
+                </div>
+                <figure class="hero-photo">
+                    <img src="images/matcha.jpg" alt="Iced matcha latte in a Rich Pour cup on the counter, with the café's painted wall behind it" width="1377" height="1400" fetchpriority="high">
+                </figure>
+            </div>
+            <div class="paint hero-paint" aria-hidden="true"></div>
+        </section>
+
+        <section class="section about" id="about">
+            <div class="wrap">
+                <h2 class="section-title">A neighborhood café with a lot of personality.</h2>
+                <div class="about-copy">
+                    <p>
+                        We pour espresso, matcha and bright house lemonades, and plate fresh food to go with them,
+                        in a room that looks nothing like the coffee shop down the road.
+                    </p>
+                    <p>
+                        Grab a coffee on the way to work, meet a friend for brunch, or settle in for the afternoon.
+                        Everything is made with good ingredients and a little extra care, one cup and one bite at a time.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section menu" id="menu">
+            <div class="wrap">
+                <div class="menu-head">
+                    <h2 class="section-title">What we pour and plate</h2>
+                </div>
+                <div class="menu-body">
+                    <figure class="feature">
+                        <img src="images/electriclemon.jpg" alt="Electric Lemon: a violet-to-pink layered lemonade with a lemon slice and dried flowers" width="1110" height="1064" loading="lazy">
+                    </figure>
+                    <div>
+                        <ul class="menu-list">
+                            <li>
+                                <h3>Coffee</h3>
+                                <p>Espresso drinks, pour-overs and signature lattes, hot or iced.</p>
+                            </li>
+                            <li>
+                                <h3>Matcha &amp; tea</h3>
+                                <p>Whisked matcha lattes and loose-leaf teas.</p>
+                            </li>
+                            <li>
+                                <h3>Lemonades &amp; more</h3>
+                                <p>House lemonades, juices, smoothies and seasonal drinks.</p>
+                            </li>
+                            <li>
+                                <h3>Breakfast &amp; brunch</h3>
+                                <p>Morning favorites, served all day on weekends.</p>
+                            </li>
+                            <li>
+                                <h3>Savory bites</h3>
+                                <p>Sandwiches, wraps and salads made fresh every day.</p>
+                            </li>
+                            <li>
+                                <h3>Sweets</h3>
+                                <p>Pastries, cakes and desserts to go with your drink.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section evenings" id="parties">
+            <div class="wrap evenings-grid">
+                <div class="evenings-intro">
+                    <h2 class="section-title">Host your private party at The Rich Pour</h2>
+                    <p>
+                        Book the café for birthdays, showers, work get-togethers and other celebrations,
+                        with drinks and bites from our kitchen.
+                    </p>
+                    <p class="party-contact">
+                        <span>Email for details</span>
+                        <a href="mailto:therichpourbbh@gmail.com?subject=Private%20party">therichpourbbh@gmail.com</a>
+                    </p>
+                </div>
+                <div class="also">
+                    <h3>We also host events</h3>
+                    <ul class="evening-list">
+                        <li>
+                            <h4>Open mic</h4>
+                            <p>Music, poetry, comedy and stories. Everyone's welcome.</p>
+                        </li>
+                        <li>
+                            <h4>Sip &amp; create</h4>
+                            <p>A relaxed art night with drinks. Materials provided.</p>
+                        </li>
+                        <li>
+                            <h4>Tea leaf readings</h4>
+                            <p>Candlelit readings with a local psychic medium.</p>
+                        </li>
+                    </ul>
+                    <p class="also-note">Dates are posted on <a href="https://www.instagram.com/therichpour_ny/" target="_blank" rel="noopener">Instagram</a>. Email us for event details and tickets.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section visit" id="visit">
+            <div class="wrap">
+                <h2 class="section-title">Come see us</h2>
+                <div class="visit-grid">
+                    <div>
+                        <div class="visit-block">
+                            <h3>Email</h3>
+                            <p class="visit-big"><a href="mailto:therichpourbbh@gmail.com">therichpourbbh@gmail.com</a></p>
+                        </div>
+                        <div class="visit-block">
+                            <h3>Instagram</h3>
+                            <p class="visit-big"><a href="https://www.instagram.com/therichpour_ny/" target="_blank" rel="noopener">@therichpour_ny</a></p>
+                        </div>
+                        <div class="visit-block">
+                            <h3>Delivery &amp; pickup</h3>
+                            <a class="btn btn-solid" href="https://www.doordash.com/store/the-rich-pour-bites-&amp;-beverage-house-massapequa-park-39579205/" target="_blank" rel="noopener">Order on DoorDash</a>
+                        </div>
+                    </div>
+                    <div class="visit-block">
+                        <h3>Hours</h3>
+                        <table class="hours">
+                            <tbody>
+                                <tr data-days="1"><th scope="row">Monday</th><td>7am–7pm</td></tr>
+                                <tr data-days="2"><th scope="row">Tuesday</th><td>7am–7pm</td></tr>
+                                <tr data-days="3"><th scope="row">Wednesday</th><td>7am–7pm</td></tr>
+                                <tr data-days="4"><th scope="row">Thursday</th><td>7am–7pm</td></tr>
+                                <tr data-days="5"><th scope="row">Friday</th><td>7am–7pm</td></tr>
+                                <tr data-days="6"><th scope="row">Saturday</th><td>8am–8pm</td></tr>
+                                <tr data-days="0"><th scope="row">Sunday</th><td>8am–8pm</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="map-band" aria-label="Map">
+            <div class="map">
+                <iframe
+                    src="https://www.google.com/maps?q=The+Rich+Pour+Bites+%26+Beverage+House,+Massapequa+Park,+NY&amp;output=embed"
+                    title="Map showing The Rich Pour at 4863 Merrick Rd, Massapequa Park, NY"
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    allowfullscreen></iframe>
+            </div>
+            <div class="wrap map-link">
+                <span>4863 Merrick Rd, Massapequa Park, NY 11762</span>
+                <a href="https://www.google.com/maps/search/?api=1&amp;query=The+Rich+Pour+Bites+%26+Beverage+House+Massapequa+Park+NY" target="_blank" rel="noopener">Get directions</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="paint" aria-hidden="true"></div>
+        <div class="wrap">
+            <picture>
+                <source srcset="images/logo.webp" type="image/webp">
+                <img src="images/logo.png" alt="The Rich Pour" width="963" height="498" loading="lazy">
+            </picture>
+            <p>&copy; <span id="year">2026</span> The Rich Pour, Bites &amp; Beverage House</p>
+            <p class="credit">Made with &lt;3 by <a href="https://lucawebdesigns.com" target="_blank" rel="noopener">luca</a></p>
         </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
-        <h2>About Us</h2>
-        <p class="section-subtitle">Where Quality Meets Comfort</p>
-        <p>
-            Welcome to The Rich Pour, your neighborhood destination for delicious bites and refreshing beverages. 
-            Located in the vibrant heart of New York, we're a cozy cafe where quality meets comfort. 
-            From our carefully crafted coffee drinks to our fresh, flavorful food offerings, every item is 
-            prepared with passion and attention to detail.
-        </p>
-        <p>
-            Whether you're grabbing your morning coffee, meeting friends for brunch, or enjoying an afternoon snack, 
-            The Rich Pour offers a warm, welcoming atmosphere where you can relax and savor the moment. 
-            We believe in using quality ingredients and creating memorable experiences, one cup and one bite at a time.
-        </p>
-    </section>
-
-    <!-- Specialties Section -->
-    <section id="specialties" class="menu">
-        <h2>What We Offer</h2>
-        <p class="section-subtitle">Crafted With Care</p>
-        <div class="menu-grid">
-            <div class="menu-item">
-                <h3>Artisan Coffee</h3>
-                <p>Expertly brewed espresso drinks, pour-overs, and specialty coffee crafted by our skilled baristas</p>
-            </div>
-            <div class="menu-item">
-                <h3>Fresh Beverages</h3>
-                <p>Handcrafted teas, fresh juices, smoothies, and seasonal drinks made with premium ingredients</p>
-            </div>
-            <div class="menu-item">
-                <h3>Savory Bites</h3>
-                <p>Gourmet sandwiches, wraps, and fresh salads made daily with locally sourced produce</p>
-            </div>
-            <div class="menu-item">
-                <h3>Sweet Treats</h3>
-                <p>Freshly baked pastries, cakes, and desserts that pair perfectly with your favorite drink</p>
-            </div>
-            <div class="menu-item">
-                <h3>Breakfast & Brunch</h3>
-                <p>Delicious morning favorites to start your day right, served all day on weekends</p>
-            </div>
-            <div class="menu-item">
-                <h3>Light Lunch</h3>
-                <p>Perfect midday meals and healthy options for those on the go</p>
-            </div>
-        </div>
-        <p class="menu-note">
-            Visit us in-store to see our full menu and daily specials!
-        </p>
-    </section>
-
-    <!-- Gallery Section -->
-    <section id="gallery" class="gallery">
-        <h2>Experience The Rich Pour</h2>
-        <p class="section-subtitle">A Visual Journey</p>
-        <div class="gallery-grid">
-            <div class="gallery-item"><img src="matcha.png" alt="Matcha"></div>
-            <div class="gallery-item"><img src="electriclemon.png" alt="Electric Lemon"></div>
-            <div class="gallery-item">🥗</div>
-            <div class="gallery-item">🧃</div>
-            <div class="gallery-item">🍰</div>
-            <div class="gallery-item">🥪</div>
-        </div>
-        <p class="gallery-note">
-            Follow us on Instagram <a href="https://www.instagram.com/therichpour_ny/" target="_blank">@therichpour_ny</a> for daily specials and cafe vibes
-        </p>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <h2>Visit Us</h2>
-        <p class="section-subtitle" style="color: #c9a961;">We'd Love To See You</p>
-        <div class="contact-info">
-            <p><strong>Location:</strong> New York, NY</p>
-            <p><strong>Hours:</strong> Mon-Fri: 7AM-7PM | Sat-Sun: 8AM-8PM</p>
-            <p><strong>Email:</strong> hello@therichpour.com</p>
-            <p><strong>Phone:</strong> (555) 123-4567</p>
-            
-            <div class="social-links">
-                <a href="https://www.instagram.com/therichpour_ny/" target="_blank">
-                    <span>📷</span> Follow on Instagram
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 The Rich Pour. All rights reserved.</p>
     </footer>
 
     <script>
-        // Hamburger menu toggle
-        const hamburger = document.querySelector('.hamburger');
-        const navLinks = document.querySelector('.nav-links');
+        // Mobile navigation
+        const toggle = document.querySelector('.nav-toggle');
+        const nav = document.getElementById('site-nav');
 
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navLinks.classList.toggle('active');
-        });
+        function setNav(open) {
+            toggle.setAttribute('aria-expanded', String(open));
+            toggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+            nav.classList.toggle('is-open', open);
+        }
 
-        // Close menu when clicking on a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                navLinks.classList.remove('active');
-            });
-        });
+        toggle.addEventListener('click', () => setNav(toggle.getAttribute('aria-expanded') !== 'true'));
+        nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setNav(false)));
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') setNav(false); });
 
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
+        // Header rule once the page scrolls
+        const header = document.querySelector('.site-header');
+        const onScroll = () => header.classList.toggle('is-scrolled', window.scrollY > 8);
+        window.addEventListener('scroll', onScroll, { passive: true });
+        onScroll();
 
-        // Add scroll effect to navigation
-        window.addEventListener('scroll', () => {
-            const nav = document.querySelector('nav');
-            if (window.scrollY > 50) {
-                nav.classList.add('scrolled');
-            } else {
-                nav.classList.remove('scrolled');
-            }
-        });
+        // Today's hours
+        const day = new Date().getDay();
+        const row = document.querySelector(`.hours tr[data-days="${day}"]`);
+        if (row) {
+            row.classList.add('is-today');
+            document.getElementById('today-hours').textContent =
+                `Open today ${row.querySelector('td').textContent}`;
+        }
 
-        // Intersection Observer for fade-in animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
+        // Turn the sheen as the page scrolls
+        if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            let ticking = false;
+            window.addEventListener('scroll', () => {
+                if (ticking) return;
+                ticking = true;
+                requestAnimationFrame(() => {
+                    document.documentElement.style.setProperty('--spin', `${window.scrollY * 0.06}deg`);
+                    ticking = false;
+                });
+            }, { passive: true });
+        }
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Observe all sections
-        document.querySelectorAll('section').forEach(section => {
-            section.style.opacity = '0';
-            section.style.transform = 'translateY(20px)';
-            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(section);
-        });
-
-        // Initial load - show first section
-        document.querySelector('.hero').style.opacity = '1';
-        document.querySelector('.hero').style.transform = 'translateY(0)';
+        document.getElementById('year').textContent = new Date().getFullYear();
     </script>
 </body>
 </html>
