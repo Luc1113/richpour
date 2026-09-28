@@ -3,13 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Rich Pour | Bites &amp; Beverage House | Massapequa Park, NY</title>
-    <meta name="description" content="The Rich Pour is a bites and beverage house in Massapequa Park, NY, serving coffee, matcha, lemonades and small plates, and hosting private parties and events.">
-    <meta property="og:title" content="The Rich Pour | Bites &amp; Beverage House">
-    <meta property="og:description" content="Coffee, matcha and small plates in a room full of color. Massapequa Park, NY.">
-    <meta property="og:image" content="https://www.therichpourny.com/images/matcha.jpg">
+    <title>The Rich Pour | Café &amp; Private Parties in Massapequa Park, NY</title>
+    <meta name="description" content="The Rich Pour is a colorful bites &amp; beverage house at 4863 Merrick Rd in Massapequa Park, NY. Coffee, matcha, house lemonades and small plates, plus private parties and events. Order on DoorDash.">
+    <link rel="canonical" href="https://www.therichpourny.com/">
+    <meta name="robots" content="index, follow, max-image-preview:large">
     <meta name="theme-color" content="#0a4d66">
-    <link rel="icon" href="images/logo.png">
+
+    <!-- Share cards: iMessage, Facebook, LinkedIn, Slack -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="The Rich Pour">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:url" content="https://www.therichpourny.com/">
+    <meta property="og:title" content="The Rich Pour | Bites &amp; Beverage House in Massapequa Park">
+    <meta property="og:description" content="Coffee, matcha, small plates and private parties in a room full of color. 4863 Merrick Rd, Massapequa Park, NY.">
+    <meta property="og:image" content="https://www.therichpourny.com/images/share-card.jpg">
+    <meta property="og:image:secure_url" content="https://www.therichpourny.com/images/share-card.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="The Rich Pour logo beside the café's espresso machine in front of its painted wall">
+    <meta property="og:video" content="https://www.therichpourny.com/images/hero.mp4">
+    <meta property="og:video:type" content="video/mp4">
+
+    <!-- X / Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="The Rich Pour | Bites &amp; Beverage House in Massapequa Park">
+    <meta name="twitter:description" content="Coffee, matcha, small plates and private parties in a room full of color.">
+    <meta name="twitter:image" content="https://www.therichpourny.com/images/share-card.jpg">
+    <meta name="twitter:image:alt" content="The Rich Pour logo beside the café's espresso machine in front of its painted wall">
+
+    <!-- Icons -->
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+    <link rel="preload" as="image" href="images/hero-poster.jpg">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CafeOrCoffeeShop",
+        "@id": "https://www.therichpourny.com/#cafe",
+        "name": "The Rich Pour",
+        "alternateName": "The Rich Pour Bites & Beverage House",
+        "description": "A colorful bites and beverage house serving coffee, matcha, house lemonades and small plates, and hosting private parties and events.",
+        "url": "https://www.therichpourny.com/",
+        "logo": "https://www.therichpourny.com/images/logo.png",
+        "image": [
+            "https://www.therichpourny.com/images/share-card.jpg",
+            "https://www.therichpourny.com/images/matcha.jpg",
+            "https://www.therichpourny.com/images/electriclemon.jpg"
+        ],
+        "email": "therichpourbbh@gmail.com",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "4863 Merrick Rd",
+            "addressLocality": "Massapequa Park",
+            "addressRegion": "NY",
+            "postalCode": "11762",
+            "addressCountry": "US"
+        },
+        "hasMap": "https://www.google.com/maps/search/?api=1&query=The+Rich+Pour+Bites+%26+Beverage+House+Massapequa+Park+NY",
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                "opens": "07:00",
+                "closes": "19:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Saturday", "Sunday"],
+                "opens": "08:00",
+                "closes": "20:00"
+            }
+        ],
+        "servesCuisine": ["Coffee", "Matcha", "Tea", "Breakfast", "Brunch", "Sandwiches", "Desserts"],
+        "acceptsReservations": "True",
+        "sameAs": [
+            "https://www.instagram.com/therichpour_ny/",
+            "https://www.doordash.com/store/the-rich-pour-bites-&-beverage-house-massapequa-park-39579205/"
+        ],
+        "potentialAction": {
+            "@type": "OrderAction",
+            "target": "https://www.doordash.com/store/the-rich-pour-bites-&-beverage-house-massapequa-park-39579205/"
+        }
+    }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gloock&family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
@@ -138,7 +218,7 @@
             gap: 1.5rem;
             height: 78px;
             padding: 0 12px 0 22px;
-            background: color-mix(in srgb, var(--paper) 72%, transparent);
+            background: color-mix(in srgb, var(--paper) 88%, transparent);
             backdrop-filter: blur(14px) saturate(1.4);
             -webkit-backdrop-filter: blur(14px) saturate(1.4);
             border: 1px solid rgba(255, 255, 255, 0.75);
@@ -163,7 +243,8 @@
             pointer-events: none;
         }
 
-        .brand img { width: 128px; }
+        .brand { display: block; padding-top: 4px; }
+        .brand img { width: 118px; }
 
         .nav-list {
             display: flex;
@@ -187,14 +268,14 @@
             /* painted highlighter stroke behind the link text */
             content: '';
             position: absolute;
-            left: -0.35em;
-            right: -0.35em;
+            left: -0.3em;
+            right: -0.3em;
             bottom: 0.3em;
-            height: 0.6em;
+            height: 0.95em;
             z-index: -1;
             background: var(--swash, #f6c9dc);
             border-radius: 40% 60% 50% 45% / 60% 40% 55% 45%;
-            filter: url(#brush-h);
+            filter: url(#brush-fine);
             clip-path: inset(0 100% 0 0);
             transition: clip-path 0.35s cubic-bezier(0.65, 0, 0.35, 1);
         }
@@ -202,10 +283,10 @@
         .nav-list a:hover::after,
         .nav-list a.is-current::after { clip-path: inset(0 0 0 0); }
 
-        .nav-list li:nth-child(1) a { --swash: #f6c9dc; }
-        .nav-list li:nth-child(2) a { --swash: #e5f08f; }
-        .nav-list li:nth-child(3) a { --swash: #bcd6f2; }
-        .nav-list li:nth-child(4) a { --swash: #d9c8f5; }
+        .nav-list li:nth-child(1) a { --swash: #f4a3c6; }
+        .nav-list li:nth-child(2) a { --swash: var(--lime); }
+        .nav-list li:nth-child(3) a { --swash: #9cc4ec; }
+        .nav-list li:nth-child(4) a { --swash: #c3aaf0; }
 
         .nav-list .nav-order {
             padding: 0.7rem 1.25rem;
@@ -248,45 +329,76 @@
         .nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
 
         /* ---------- Hero ---------- */
-        .hero .wrap {
-            display: grid;
-            grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
-            gap: clamp(2rem, 5vw, 5rem);
-            align-items: end;
-            padding-top: clamp(2.5rem, 6vw, 5rem);
-            padding-bottom: clamp(2.5rem, 5vw, 4rem);
+        /* Full-width video banner; it runs up under the floating nav */
+        .hero-stage {
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+            min-height: clamp(560px, 92vh, 900px);
+            margin-top: -90px;
+            overflow: hidden;
+            background: var(--teal-deep);
+            isolation: isolate;
+        }
+
+        .hero-video {
+            position: absolute;
+            inset: 0;
+            z-index: -2;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-stage::before {
+            /* teal shade so the white type reads over any frame */
+            content: '';
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            background:
+                linear-gradient(to top, rgba(8, 58, 77, 0.92) 0%, rgba(8, 58, 77, 0.55) 38%, rgba(8, 58, 77, 0) 72%),
+                linear-gradient(to right, rgba(8, 58, 77, 0.45) 0%, rgba(8, 58, 77, 0) 60%);
+        }
+
+        .hero-copy {
+            padding-top: 140px;
+            padding-bottom: clamp(2.5rem, 6vw, 4.5rem);
         }
 
         .hero h1 {
             font-size: clamp(2.7rem, 6.4vw, 5.6rem);
             line-height: 0.96;
             letter-spacing: -0.025em;
-            max-width: 11ch;
+            max-width: 12ch;
+            color: #fff;
         }
 
         .hero-lede {
-            margin-top: 1.75rem;
+            margin-top: 1.5rem;
             max-width: 34rem;
             font-size: 1.2rem;
-            color: var(--muted);
+            color: rgba(255, 255, 255, 0.88);
         }
 
         .today {
-            margin-top: 1.5rem;
+            margin-top: 1.25rem;
             font-weight: 500;
-            color: var(--ink);
+            color: #fff;
         }
 
         .today::before {
+            /* little lime coffee cup */
             content: '';
             display: inline-block;
-            width: 0.6em;
-            height: 0.6em;
-            margin-right: 0.55em;
-            border-radius: 50%;
+            width: 1.15em;
+            height: 1.15em;
+            margin-right: 0.45em;
             background: var(--lime);
-            box-shadow: 0 0 0 3px rgba(212, 232, 74, 0.35);
-            vertical-align: 0.05em;
+            -webkit-mask: var(--cup) center / contain no-repeat;
+            mask: var(--cup) center / contain no-repeat;
+            vertical-align: -0.2em;
+            --cup: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M8 2.5c.6.8.6 1.7 0 2.5M11.5 2.5c.6.8.6 1.7 0 2.5M15 2.5c.6.8.6 1.7 0 2.5' fill='none' stroke='%23000' stroke-width='1.6' stroke-linecap='round'/%3E%3Cpath d='M4 8h14v5.5A6.5 6.5 0 0 1 11.5 20h-1A6.5 6.5 0 0 1 4 13.5V8z'/%3E%3Cpath d='M18 9.5h1.2a2.8 2.8 0 0 1 0 5.6H17.4' fill='none' stroke='%23000' stroke-width='1.8'/%3E%3Crect x='3' y='21' width='16' height='1.6' rx='.8'/%3E%3C/svg%3E");
         }
 
         .actions {
@@ -314,20 +426,34 @@
         .btn-line { color: var(--teal); }
         .btn-line:hover { background: var(--teal); color: #fff; }
 
-        .hero-photo {
-            position: relative;
-            aspect-ratio: 4 / 5;
-            border-radius: 220px 220px 6px 6px;
-            overflow: hidden;
-            background: #d8e3c4;
+        .hero .btn-solid { background: #fff; border-color: #fff; color: var(--teal); }
+        .hero .btn-solid:hover { background: var(--lime); border-color: var(--lime); color: var(--teal-deep); }
+        .hero .btn-line { border-color: #fff; color: #fff; }
+        .hero .btn-line:hover { background: #fff; color: var(--teal); }
+
+        .video-toggle {
+            position: absolute;
+            right: var(--gutter);
+            bottom: clamp(2.5rem, 6vw, 4.5rem);
+            width: 40px;
+            height: 40px;
+            display: grid;
+            place-items: center;
+            border: 0;
+            border-radius: 50%;
+            background: color-mix(in srgb, var(--paper) 85%, transparent);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            color: var(--teal);
+            cursor: pointer;
+            transition: background-color 0.2s;
         }
 
-        .hero-photo img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: 50% 62%;
-        }
+        .video-toggle:hover { background: var(--lime); }
+        .video-toggle svg { width: 16px; height: 16px; fill: currentColor; }
+        .video-toggle .i-play { display: none; }
+        .video-toggle[aria-pressed="true"] .i-play { display: inline; }
+        .video-toggle[aria-pressed="true"] .i-pause { display: none; }
 
         .hero-paint { --paint-h: clamp(64px, 9vw, 120px); }
 
@@ -532,7 +658,7 @@
         .evening-list h4 {
             font-family: var(--display);
             font-weight: 400;
-            font-size: 1.3rem;
+            font-size: 1.45rem;
             line-height: 1.2;
             color: #fff;
         }
@@ -678,13 +804,12 @@
             .hero-paint {
                 animation: pour 1.3s cubic-bezier(0.65, 0, 0.35, 1) 0.2s both;
             }
-            .hero h1, .hero-lede, .today, .hero .actions, .hero-photo {
+            .hero h1, .hero-lede, .today, .hero .actions {
                 animation: rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
             }
             .hero-lede { animation-delay: 0.1s; }
             .today { animation-delay: 0.18s; }
             .hero .actions { animation-delay: 0.26s; }
-            .hero-photo { animation-delay: 0.05s; }
         }
 
         @media (prefers-reduced-motion: reduce) {
@@ -711,7 +836,6 @@
 
         /* ---------- Responsive ---------- */
         @media (max-width: 900px) {
-            .hero .wrap,
             .about .wrap,
             .menu-body,
             .evenings-grid,
@@ -719,13 +843,7 @@
                 grid-template-columns: minmax(0, 1fr);
             }
 
-            .hero-photo {
-                max-width: 440px;
-                width: 100%;
-                border-radius: 200px 200px 6px 6px;
-            }
-
-            .feature { position: static; max-width: 460px; }
+            .feature { position: relative; top: auto; max-width: 460px; margin-right: 5%; }
         }
 
         @media (max-width: 760px) {
@@ -780,6 +898,27 @@
                 text-align: center;
             }
 
+            /* Less reading on phones: keep names, drop the supporting lines */
+            .hero-lede { font-size: 1.05rem; }
+            .hero-stage { margin-top: -78px; min-height: 88svh; }
+            .hero-copy { padding-bottom: 5.5rem; }
+            .video-toggle { bottom: 1.25rem; }
+            .about-copy p + p { display: none; }
+
+            .menu-list {
+                display: grid;
+                grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+                column-gap: 1rem;
+            }
+
+            .menu-list li { padding: 1.1rem 0; }
+            .menu-list li:nth-last-child(2) { border-bottom: 1px solid var(--rule); }
+            .menu-list h3 { font-size: 1.3rem; }
+            .menu-list p { display: none; }
+
+            .evening-list li { padding: 0.45rem 0; }
+            .evening-list p { display: none; }
+
             .nav-shell { height: 66px; padding: 0 8px 0 16px; border-radius: 18px; }
             .brand img { width: 104px; }
 
@@ -797,6 +936,10 @@
         <filter id="brush-h" x="-10%" y="-60%" width="120%" height="220%">
             <feTurbulence type="fractalNoise" baseFrequency="0.05 0.012" numOctaves="2" seed="3" />
             <feDisplacementMap in="SourceGraphic" scale="9" />
+        </filter>
+        <filter id="brush-fine" x="-10%" y="-40%" width="120%" height="180%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.08 0.02" numOctaves="2" seed="5" />
+            <feDisplacementMap in="SourceGraphic" scale="4" />
         </filter>
         <filter id="brush" x="-5%" y="-20%" width="110%" height="140%">
             <feTurbulence type="fractalNoise" baseFrequency="0.01 0.05" numOctaves="2" seed="7" />
@@ -831,8 +974,11 @@
 
     <main id="top">
         <section class="hero">
-            <div class="wrap">
-                <div>
+            <div class="hero-stage">
+                <video class="hero-video" src="images/hero.mp4" poster="images/hero-poster.jpg"
+                    autoplay muted loop playsinline preload="auto"
+                    aria-label="Short video of The Rich Pour: the espresso machine in front of the painted wall, the storefront sign, and an iced matcha"></video>
+                <div class="wrap hero-copy">
                     <h1>Coffee, matcha and small plates in a room full of color.</h1>
                     <p class="hero-lede">
                         The Rich Pour is a bites &amp; beverage house in Massapequa Park, NY.
@@ -841,12 +987,12 @@
                     <p class="today" id="today-hours">Open Mon–Fri 7am–7pm, Sat–Sun 8am–8pm</p>
                     <div class="actions">
                         <a class="btn btn-solid" href="https://www.doordash.com/store/the-rich-pour-bites-&amp;-beverage-house-massapequa-park-39579205/" target="_blank" rel="noopener">Order on DoorDash</a>
-                        <a class="btn btn-line" href="#menu">See the menu</a>
+                        <a class="btn btn-line" href="#parties">Host your event</a>
                     </div>
                 </div>
-                <figure class="hero-photo">
-                    <img src="images/matcha.jpg" alt="Iced matcha latte in a Rich Pour cup on the counter, with the café's painted wall behind it" width="1377" height="1400" fetchpriority="high">
-                </figure>
+                <button class="video-toggle" type="button" aria-label="Pause video" aria-pressed="false">
+                    <svg viewBox="0 0 16 16" aria-hidden="true"><rect class="i-pause" x="4" y="3" width="2.6" height="10" rx="1"/><rect class="i-pause" x="9.4" y="3" width="2.6" height="10" rx="1"/><path class="i-play" d="M5 3.2v9.6a.6.6 0 0 0 .9.5l7.4-4.8a.6.6 0 0 0 0-1L5.9 2.7a.6.6 0 0 0-.9.5z"/></svg>
+                </button>
             </div>
             <div class="paint hero-paint" aria-hidden="true"></div>
         </section>
@@ -1050,6 +1196,17 @@
         const onScroll = () => header.classList.toggle('is-scrolled', window.scrollY > 8);
         window.addEventListener('scroll', onScroll, { passive: true });
         onScroll();
+
+        // Hero video: pausable, and held on its first frame for people who prefer less motion
+        const video = document.querySelector('.hero-video');
+        const videoToggle = document.querySelector('.video-toggle');
+        function setPaused(paused) {
+            paused ? video.pause() : video.play().catch(() => {});
+            videoToggle.setAttribute('aria-pressed', String(paused));
+            videoToggle.setAttribute('aria-label', paused ? 'Play video' : 'Pause video');
+        }
+        videoToggle.addEventListener('click', () => setPaused(!video.paused));
+        if (matchMedia('(prefers-reduced-motion: reduce)').matches) setPaused(true);
 
         // Today's hours
         const day = new Date().getDay();

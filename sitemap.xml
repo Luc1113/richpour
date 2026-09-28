@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+  <url>
+    <loc>https://www.therichpourny.com/</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://www.therichpourny.com/images/share-card.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.therichpourny.com/images/matcha.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.therichpourny.com/images/electriclemon.jpg</image:loc>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://www.therichpourny.com/images/hero-poster.jpg</video:thumbnail_loc>
+      <video:title>Inside The Rich Pour</video:title>
+      <video:description>The espresso machine in front of the painted wall, the storefront sign on Merrick Rd, and an iced matcha at The Rich Pour in Massapequa Park, NY.</video:description>
+      <video:content_loc>https://www.therichpourny.com/images/hero.mp4</video:content_loc>
+      <video:duration>8</video:duration>
+    </video:video>
+  </url>
+</urlset>

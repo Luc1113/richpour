@@ -20,6 +20,15 @@
         ],
         "createdAt": "2026-09-28T12:40:50.506Z",
         "reason": "Claude: flagged .menu/.evenings sections get 4.5–8.5rem vertical padding from .section and a clamp gutter from .wrap; verified in rendered screenshots at 1440px and 390px"
+      },
+      {
+        "rule": "flat-type-hierarchy",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-09-28T13:00:04.427Z",
+        "reason": "Claude: detector skips clamp()-sized h1 (up to 5.6rem) and h2 (up to 4rem); the 20.8px h3 is the mobile-only menu grid label. Real scale is 18px body / 28px h3 / 64px h2 / 90px h1"
       }
     ]
   }
